@@ -11,12 +11,13 @@ const propTypes = {
 
 const defaultProps = {
   size: 40,
+  color: '#DF5FFF',
   tension: 500,
   friction: 60,
   mass: 0.5,
 }
 
-const PoppingCircle = ({ size, tension, friction, mass }) => {
+const PoppingCircle = ({ size, color, tension, friction, mass }) => {
   const id = useUniqueId('popping-circle')
 
   const trail = useTrail(2, {
@@ -52,7 +53,7 @@ const PoppingCircle = ({ size, tension, friction, mass }) => {
         cx={20}
         cy={20}
         r={trail[0].radius.interpolate(radius => radius)}
-        fill="hotpink"
+        fill={color}
         mask={`url(#${id})`}
       />
     </svg>

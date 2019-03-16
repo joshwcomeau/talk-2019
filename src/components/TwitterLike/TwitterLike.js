@@ -3,16 +3,19 @@ import styled from 'styled-components'
 
 import PoppingCircle from '../PoppingCircle'
 import UnstyledButton from '../UnstyledButton'
-
-import heartSrc from './heart.svg'
+import Pop from '../Pop'
+import Heart from './Heart'
 
 const TwitterLike = () => {
-  const [isToggled, setIsToggled] = React.useState(false)
-  return (
-    <Wrapper onClick={() => setIsToggled(!isToggled)}>
-      <Background>{isToggled && <PoppingCircle />}</Background>
+  const [isLiked, setIsLiked] = React.useState(false)
 
-      <Heart src={heartSrc} />
+  const heart = <Heart width={20} mode={isLiked ? 'fill' : 'stroke'} />
+
+  return (
+    <Wrapper onClick={() => setIsLiked(!isLiked)}>
+      <Background>{isLiked && <PoppingCircle />}</Background>
+
+      {isLiked ? <Pop>{heart}</Pop> : heart}
     </Wrapper>
   )
 }
@@ -29,10 +32,6 @@ const Wrapper = styled(UnstyledButton)`
 const Background = styled.div`
   position: absolute;
   z-index: -1;
-`
-
-const Heart = styled.img`
-  width: 20px;
 `
 
 export default TwitterLike
