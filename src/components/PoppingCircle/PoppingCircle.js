@@ -11,22 +11,33 @@ const propTypes = {
 
 const defaultProps = {
   size: 40,
-  color: '#DF5FFF',
+  color: '#DF5FFF99',
   tension: 500,
   friction: 60,
   mass: 0.5,
 }
 
-const PoppingCircle = ({ size, color, tension, friction, mass }) => {
+const PoppingCircle = ({ size, color }) => {
   const id = useUniqueId('popping-circle')
 
-  const trail = useTrail(2, {
+  const outerRingProps = useSpring({
     radius: 20,
     from: { radius: 0 },
     config: {
-      tension,
-      friction,
-      mass,
+      tension: 800,
+      friction: 60,
+      mass: 0.5,
+    },
+  })
+
+  const innerRingProps = useSpring({
+    radius: 20,
+    from: { radius: 0 },
+    delay: 110,
+    config: {
+      tension: 1300,
+      friction: 90,
+      mass: 1,
     },
   })
 
@@ -43,7 +54,7 @@ const PoppingCircle = ({ size, color, tension, friction, mass }) => {
           <animated.circle
             cx={20}
             cy={20}
-            r={trail[1].radius.interpolate(radius => radius + 0.4)}
+            r={innerRingProps.radius.interpolate(radius => radius + 0.4)}
             fill="#000"
           />
         </mask>
@@ -52,7 +63,7 @@ const PoppingCircle = ({ size, color, tension, friction, mass }) => {
       <animated.circle
         cx={20}
         cy={20}
-        r={trail[0].radius.interpolate(radius => radius)}
+        r={outerRingProps.radius.interpolate(radius => radius)}
         fill={color}
         mask={`url(#${id})`}
       />
