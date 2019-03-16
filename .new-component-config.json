@@ -1,0 +1,7 @@
+{
+    "type": "functional",
+    "prettierConfig": {
+        "singleQuote": true,
+        "tabWidth": 2
+    }
+}
