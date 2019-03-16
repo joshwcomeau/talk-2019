@@ -1,7 +1,14 @@
-import React from 'react';
+import React from 'react'
+
+import PoppingCircle from '../PoppingCircle'
 
 const TwitterLike = () => {
-  return <div />;
-};
+  const [isToggled, setIsToggled] = React.useState(false)
+  return (
+    <button onClick={() => setIsToggled(!isToggled)}>
+      <PoppingCircle key={isToggled} />
+    </button>
+  )
+}
 
-export default TwitterLike;
+export default TwitterLike
