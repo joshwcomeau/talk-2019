@@ -1,12 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const NavigationItem = ({ to, children }) => (
-  <NavLink to="/" activeStyle={{ fontWeight: 'bold' }}>
-    {children}
-  </NavLink>
-)
+const NavigationItem = ({ to, children }) => <Link to={to}>{children}</Link>
 
 const Header = ({ children }) => {
   return (
@@ -27,6 +23,8 @@ const Wrapper = styled.header`
   align-items: center;
   height: 80px;
   padding: 0 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Ubuntu, 'Helvetica Neue', sans-serif;
 `
 
 const Logo = styled.div`
