@@ -16,25 +16,28 @@ const StateManager = () => {
   )
 
   return (
-    <Tweet
-      displayName="Josh ✨"
-      username="joshwcomeau"
-      avatarSrc="http://placekitten.com/128/128"
-      tweetContents="Hello world!"
-      timestamp={new Date()}
-      numOfRetweets={numOfRetweets}
-      numOfLikes={numOfLikes}
-      isRetweetedByCurrentUser={isRetweeted}
-      isLikedByCurrentUser={isLiked}
-      handleToggleLike={() => {
-        setNumOfLikes(isLiked ? numOfLikes - 1 : numOfLikes + 1)
-        setIsLiked(!isLiked)
-      }}
-      handleToggleRetweet={() => {
-        setNumOfRetweets(isRetweeted ? numOfRetweets - 1 : numOfRetweets + 1)
-        setIsRetweeted(!isRetweeted)
-      }}
-    />
+    <React.Fragment>
+      <Tweet
+        displayName="Josh ✨"
+        username="joshwcomeau"
+        avatarSrc="http://placekitten.com/128/128"
+        tweetContents="*tap tap* is this thing on? 🎤"
+        timestamp={new Date()}
+        numOfRetweets={numOfRetweets}
+        numOfLikes={numOfLikes}
+        isRetweetedByCurrentUser={isRetweeted}
+        isLikedByCurrentUser={isLiked}
+        handleToggleLike={() => {
+          setNumOfLikes(isLiked ? numOfLikes - 1 : numOfLikes + 1)
+          setIsLiked(!isLiked)
+        }}
+        handleToggleRetweet={() => {
+          setNumOfRetweets(isRetweeted ? numOfRetweets - 1 : numOfRetweets + 1)
+          setIsRetweeted(!isRetweeted)
+        }}
+      />
+      <div style={{ height: 500 }}>Hello</div>
+    </React.Fragment>
   )
 }
 

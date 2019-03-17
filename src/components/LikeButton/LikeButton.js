@@ -22,9 +22,14 @@ const LikeButton = ({ isLiked }) => {
         {isLiked ? <ConfettiPiece /> : null}
         {isLiked ? <ConfettiPiece /> : null}
         {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
       </Background>
 
-      {isLiked ? <Pop>{heart}</Pop> : heart}
+      <Foreground>{isLiked ? <Pop>{heart}</Pop> : heart}</Foreground>
     </Wrapper>
   )
 }
@@ -40,7 +45,12 @@ const Wrapper = styled.div`
 
 const Background = styled.div`
   position: absolute;
-  z-index: -1;
+  z-index: 0;
+`
+
+const Foreground = styled.div`
+  position: relative;
+  z-index: 1;
 `
 
 export default LikeButton
