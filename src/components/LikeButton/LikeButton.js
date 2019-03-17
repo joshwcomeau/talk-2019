@@ -8,13 +8,12 @@ import ConfettiPiece from './ConfettiPiece'
 import Pop from '../Pop'
 import Heart from './Heart'
 
-const TwitterLike = () => {
-  const [isLiked, setIsLiked] = React.useState(false)
-
-  const heart = <Heart width={24} mode={isLiked ? 'fill' : 'stroke'} />
+const LikeButton = ({ isLiked }) => {
+  console.log({ isLiked })
+  const heart = <Heart width={24} isToggled={isLiked} />
 
   return (
-    <Wrapper onClick={() => setIsLiked(!isLiked)}>
+    <Wrapper>
       <Background>
         {isLiked && <PoppingCircle />}
 
@@ -30,7 +29,7 @@ const TwitterLike = () => {
   )
 }
 
-const Wrapper = styled(UnstyledButton)`
+const Wrapper = styled.div`
   position: relative;
   width: 40px;
   height: 40px;
@@ -44,4 +43,4 @@ const Background = styled.div`
   z-index: -1;
 `
 
-export default TwitterLike
+export default LikeButton

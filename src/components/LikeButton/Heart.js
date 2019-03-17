@@ -8,14 +8,17 @@ const strokePath =
 const fillPath =
   'M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12z'
 
-const Heart = ({ width, mode }) => (
+const Heart = ({ width, isToggled }) => (
   <Svg
     viewBox="0 0 24 24"
     style={{
       width,
     }}
   >
-    <path d={mode === 'fill' ? fillPath : strokePath} fill="#E0245E" />
+    <path
+      d={isToggled ? fillPath : strokePath}
+      fill={isToggled ? 'rgb(224, 36, 94)' : 'currentColor'}
+    />
   </Svg>
 )
 
