@@ -6,7 +6,7 @@ import { random } from '../../utils'
 const Particle = ({ children }) => {
   const angle = React.useRef(random(0, Math.PI * 2 * 100) / 100)
 
-  const startDistance = React.useRef(random(5, 8))
+  const startDistance = React.useRef(random(15, 22))
   const endDistance = React.useRef(startDistance.current + random(5, 20))
 
   const startX = Math.cos(angle.current) * startDistance.current
@@ -14,8 +14,6 @@ const Particle = ({ children }) => {
 
   const endX = Math.cos(angle.current) * endDistance.current
   const endY = Math.sin(angle.current) * endDistance.current
-
-  console.log(startDistance.current, endDistance.current)
 
   const positionSpring = useSpring({
     x: endX,
@@ -31,7 +29,7 @@ const Particle = ({ children }) => {
     opacity: 0,
     from: { opacity: 1 },
     config: {
-      tension: 40,
+      tension: 70,
       friction: 20,
     },
   })

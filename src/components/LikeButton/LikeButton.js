@@ -9,7 +9,6 @@ import Pop from '../Pop'
 import Heart from './Heart'
 
 const LikeButton = ({ isLiked }) => {
-  console.log({ isLiked })
   const heart = <Heart width={24} isToggled={isLiked} />
 
   return (
@@ -17,6 +16,8 @@ const LikeButton = ({ isLiked }) => {
       <Background>
         {isLiked && <PoppingCircle />}
 
+        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
         {isLiked ? <ConfettiPiece /> : null}
         {isLiked ? <ConfettiPiece /> : null}
         {isLiked ? <ConfettiPiece /> : null}

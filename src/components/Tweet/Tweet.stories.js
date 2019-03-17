@@ -36,7 +36,6 @@ const StateManager = () => {
           setIsRetweeted(!isRetweeted)
         }}
       />
-      <div style={{ height: 500 }}>Hello</div>
     </React.Fragment>
   )
 }
