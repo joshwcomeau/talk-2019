@@ -3,17 +3,27 @@ import styled from 'styled-components'
 
 import PoppingCircle from '../PoppingCircle'
 import UnstyledButton from '../UnstyledButton'
+
+import ConfettiPiece from './ConfettiPiece'
 import Pop from '../Pop'
 import Heart from './Heart'
 
 const TwitterLike = () => {
   const [isLiked, setIsLiked] = React.useState(false)
 
-  const heart = <Heart width={20} mode={isLiked ? 'fill' : 'stroke'} />
+  const heart = <Heart width={24} mode={isLiked ? 'fill' : 'stroke'} />
 
   return (
     <Wrapper onClick={() => setIsLiked(!isLiked)}>
-      <Background>{isLiked && <PoppingCircle />}</Background>
+      <Background>
+        {isLiked && <PoppingCircle />}
+
+        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked ? <ConfettiPiece /> : null}
+      </Background>
 
       {isLiked ? <Pop>{heart}</Pop> : heart}
     </Wrapper>
