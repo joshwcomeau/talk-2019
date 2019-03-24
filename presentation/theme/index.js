@@ -17,28 +17,34 @@ const theme = createTheme(
     components: {
       heading: {
         h1: {
-          fontSize: '4rem',
+          fontSize: '5rem',
           textTransform: 'uppercase',
+          color: colors.tertiary,
         },
         h2: {
-          fontSize: '3.5rem',
+          fontSize: '4rem',
           textTransform: 'uppercase',
+          color: colors.tertiary,
         },
         h3: {
-          fontSize: '3rem',
+          fontSize: '3.5rem',
           textTransform: 'uppercase',
+          color: colors.tertiary,
         },
         h4: {
           fontSize: '2.5rem',
           textTransform: 'uppercase',
+          color: colors.tertiary,
         },
         h5: {
           fontSize: '2rem',
           textTransform: 'uppercase',
+          color: colors.tertiary,
         },
         h6: {
           fontSize: '1.5rem',
           textTransform: 'uppercase',
+          color: colors.tertiary,
         },
       },
       codePane: {

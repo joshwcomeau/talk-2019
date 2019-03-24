@@ -68,7 +68,7 @@ module.exports = {
       },
       {
         test: /\.mp4$/,
-        loader: 'url-loader?mimetype=video/mp4',
+        loader: 'url-loader',
         include: path.join(__dirname, 'assets'),
       },
     ],

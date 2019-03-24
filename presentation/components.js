@@ -51,6 +51,9 @@ _CodePane.propTypes = { code: PropTypes.string, language: PropTypes.string }
 const Paragraph = styled.p`
   font-family: 'Merriweather', serif;
   font-size: 2rem;
+  font-weight: 300;
+  color: white;
+  -webkit-font-smoothing: antialiased;
 `
 
 export default {

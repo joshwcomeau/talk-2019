@@ -7,46 +7,8 @@ import theme from './theme'
 // DEFAULT LAYOUT
 
 export const DefaultSlide = ({ children, ...rest }) => (
-  <Slide {...rest}>
-    <MDXProvider components={components}>{children}</MDXProvider>
-  </Slide>
-)
-
-// DARK LAYOUT
-
-const darkComponents = {
-  ...components,
-  h2: ({ children }) => (
-    <Heading size={2} textColor="#6FA0FF">
-      {children}
-    </Heading>
-  ),
-  h3: ({ children }) => (
-    <Heading size={3} textColor="#6FA0FF">
-      {children}
-    </Heading>
-  ),
-  h4: ({ children }) => (
-    <Heading size={4} textColor="#6FA0FF">
-      {children}
-    </Heading>
-  ),
-  h5: ({ children }) => (
-    <Heading size={5} textColor="#6FA0FF">
-      {children}
-    </Heading>
-  ),
-  h6: ({ children }) => (
-    <Heading size={6} textColor="#6FA0FF">
-      {children}
-    </Heading>
-  ),
-  p: ({ children }) => <Text textColor="white">{children}</Text>,
-}
-
-export const DarkSlide = ({ children, ...rest }) => (
   <Slide bgColor="#19181F" {...rest}>
-    <MDXProvider components={darkComponents}>{children}</MDXProvider>
+    <MDXProvider components={components}>{children}</MDXProvider>
   </Slide>
 )
 

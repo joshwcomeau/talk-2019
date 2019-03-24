@@ -4,11 +4,75 @@ import RegularComponent from './regular-component'
 import TitleCard from '../src/components/TitleCard'
 import PoppingCircle from '../src/components/PoppingCircle'
 
-export default DarkSlide
+import './index.css'
 
-# Hi there!
+# 👋🏻 Good morning!
 
-This is a test
+---
+
+My name’s Josh.
+
+I flew here from Canada.
+
+# 🛫
+
+---
+
+Flying is **amazing**
+
+---
+
+...but it doesn't always feel amazing.
+
+---
+
+### Boarding
+
+---
+
+[pic of people milling around ignoring board order]
+
+---
+
+import boardRankedSrc from '../assets/plane-boarding-methods-ranked.png'
+
+<img src={boardRankedSrc} style={{ width: '100%' }} />
+
+---
+
+import boardStupidSrc from '../assets/plane-boarding-stupid.png'
+
+<img src={boardStupidSrc} style={{ width: '100%' }} />
+
+---
+
+import mythbustersSrc from '../assets/mythbusters.mp4'
+
+<video autoPlay src={mythbustersSrc} style={{ width: '100%' }} />
+
+---
+
+Clearly, there is a lot of energy around improving boarding.
+
+And things have been improving!
+
+---
+
+import unitedSrc from '../assets/united.mp4'
+
+<video controls src={unitedSrc} style={{ width: '100%' }} />
+
+---
+
+...But is boarding _really_ the biggest problem with air travel?
+
+---
+
+What does this have to do with anything?
+
+---
+
+# Performance
 
 ---
 
@@ -16,61 +80,38 @@ This is a test
 
 ---
 
-export default DarkSlide
-
-export const transition = ['zoom']
-
-# Write your Spectacle Presentations in Markdown
-
-## And seamlessly use React Components
+Why does this matter?
 
 ---
 
-## ![datboi](https://pbs.twimg.com/media/CkjFUyTXEAEysBY.jpg)
-
-<RegularComponent />
+## User Experience
 
 ---
 
-###### Typography
+## Relevance
 
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-Standard Text
+<!-- Matt Perry's ideas about the web as a uniquely open platform -->
 
 ---
 
-###### Standard List
+Animation Investigation
 
-- Item 1
-- Item 2
-- Item 3
-- Item 4
+# Accordions
 
 ---
 
-> Example Quote
+Look at the accordion in https://getbootstrap.com/docs/4.0/components/collapse/#accordion-example
 
-<Cite>Author</Cite>
+Pull up the devtools, to show how much work is done by the GPU and in raster to get each frame painted
+
+Explain how layout and paint is expensive
+
+Explain that compositing is cheap, but it requires the use of 2 CSS properties
+
+It's not easy to use them here to create an accordion
+
+My advice? Don't bother with this animation. It's low-yield. There are more-fun things we can do with animation
 
 ---
 
-export default CodeSlide
-
-```javascript
-class SuperCoolComponent extends React.Component {
-  render() {
-    return <p>code slide works in markdown too whaaaaat</p>
-  }
-}
-```
+Affordance: https://blog.teamtreehouse.com/affordances-web-design

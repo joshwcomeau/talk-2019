@@ -1,3 +1,7 @@
 .react-live-dark pre.prism-code {
   background: black !important;
 }
+
+body {
+  background: #19181f !important;
+}
