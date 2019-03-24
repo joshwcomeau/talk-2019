@@ -1,5 +1,6 @@
-import React, { createElement, Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { createElement, Component } from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 import {
   Heading,
@@ -18,35 +19,39 @@ import {
   TableRow,
   TableHeaderItem,
   TableBody,
-  TableItem
-} from 'spectacle';
-
+  TableItem,
+} from 'spectacle'
 
 const _Heading = size => {
-  const component = ({ children }) => <Heading size={size}>{children}</Heading>;
-  component.propTypes = { children: PropTypes.node };
-  return component;
-};
+  const component = ({ children }) => <Heading size={size}>{children}</Heading>
+  component.propTypes = { children: PropTypes.node }
+  return component
+}
 
 const _S = type => {
-  const component = ({ children }) => <S type={type}>{children}</S>;
-  component.propTypes = { children: PropTypes.node };
-  return component;
-};
+  const component = ({ children }) => <S type={type}>{children}</S>
+  component.propTypes = { children: PropTypes.node }
+  return component
+}
 
 const _CombineBlockQuote = ({ children }) => (
   <BlockQuote>
     <Quote>{children}</Quote>
   </BlockQuote>
-);
+)
 
-_CombineBlockQuote.propTypes = { children: PropTypes.node };
+_CombineBlockQuote.propTypes = { children: PropTypes.node }
 
 const _CodePane = ({ children, language }) => (
   <CodePane theme="external" lang="javascript" source={children} />
-);
+)
 
-_CodePane.propTypes = { code: PropTypes.string, language: PropTypes.string };
+_CodePane.propTypes = { code: PropTypes.string, language: PropTypes.string }
+
+const Paragraph = styled.p`
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+`
 
 export default {
   a: Link,
@@ -63,7 +68,7 @@ export default {
   img: Image,
   codespan: Code,
   li: ListItem,
-  p: Text,
+  p: Paragraph,
   strong: _S('bold'),
   ul: List,
   table: Table,
@@ -71,5 +76,5 @@ export default {
   th: TableHeaderItem,
   tbody: TableBody,
   tr: TableRow,
-  td: TableItem
-};
+  td: TableItem,
+}
