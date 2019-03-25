@@ -1,8 +1,14 @@
 import { Cite } from 'spectacle'
-import { DarkSlide, CodeSlide } from './slides'
+import { LightSlide, CodeSlide } from './slides'
 import RegularComponent from './regular-component'
 import TitleCard from '../src/components/TitleCard'
 import PoppingCircle from '../src/components/PoppingCircle'
+import Spacer from '../src/components/Spacer'
+import SpacedRow from '../src/components/SpacedRow'
+import Avatar from '../src/components/Avatar'
+import Footnote from '../src/components/Footnote'
+import AnimationIntroScreen from '../src/components/AnimationIntroScreen'
+import ExternalLink from '../src/components/ExternalLink'
 
 import './index.css'
 
@@ -26,11 +32,9 @@ Flying is **amazing**
 
 ---
 
+Let's talk about
+
 ### Boarding
-
----
-
-[pic of people milling around ignoring board order]
 
 ---
 
@@ -49,6 +53,12 @@ import boardStupidSrc from '../assets/plane-boarding-stupid.png'
 import mythbustersSrc from '../assets/mythbusters.mp4'
 
 <video autoPlay src={mythbustersSrc} style={{ width: '100%' }} />
+
+---
+
+...Of course, this assumes that people actually _follow_ the instructions
+
+[pic of people milling around ignoring board order]
 
 ---
 
@@ -82,9 +92,55 @@ What does this have to do with anything?
 
 Why does this matter?
 
+<!--
+
+It's easy to make the case for page-load time;
+If someone spends more than X seconds staring at a blank screen after
+clicking the link to your site, they'll eventually bail. You get less visitors.
+
+-->
+
 ---
 
-## User Experience
+import craigslistSrc from '../assets/craigslist.png'
+
+<img src={craigslistSrc} style={{ width: '100%' }} />
+
+---
+
+import kijijiSrc from '../assets/kijiji.png'
+
+<img src={kijijiSrc} style={{ width: '100%' }} />
+
+---
+
+Polished, professional experiences.
+
+<!--
+
+The rest of their experience is really important too. Smooth, jank-free
+animations are what make a product feel polished and professional.
+
+People like to use polished, professional experiences. And that's what they're
+getting, in native mobile apps.
+
+-->
+
+---
+
+import mattPerryDevSrc from '../assets/matt-perry-dev.jpg'
+import chantasticSrc from '../assets/chantastic.jpg'
+
+<SpacedRow>
+  <Avatar name="Matt G Perry" src={mattPerryDevSrc} />
+  <Avatar name="Chantastic" src={chantasticSrc} />
+</SpacedRow>
+
+<Footnote
+  title="React Podcast #35"
+  subtitle="Make the Web Look Great, with Matt Perry"
+  href="https://reactpodcast.simplecast.fm/35"
+/>
 
 ---
 
@@ -94,23 +150,66 @@ Why does this matter?
 
 ---
 
-Animation Investigation
-
-# Accordions
+<AnimationIntroScreen title="Accordions" />
 
 ---
+
+<!--
 
 Look at the accordion in https://getbootstrap.com/docs/4.0/components/collapse/#accordion-example
 
 Pull up the devtools, to show how much work is done by the GPU and in raster to get each frame painted
 
-Explain how layout and paint is expensive
+-->
 
-Explain that compositing is cheap, but it requires the use of 2 CSS properties
+<ExternalLink href="https://getbootstrap.com/docs/4.0/components/collapse/#accordion-example">
+  Bootstrap accordion example
+</ExternalLink>
 
-It's not easy to use them here to create an accordion
+---
 
-My advice? Don't bother with this animation. It's low-yield. There are more-fun things we can do with animation
+import greenPixelsSrc from '../assets/green-pixels.mp4'
+
+The Pixel Pipeline
+
+<video
+  src={greenPixelsSrc}
+  autoPlay
+  loop
+  style={{ width: 300, height: 300, borderRadius: 1000, objectFit: 'cover' }}
+/>
+
+---
+
+import pixelPipelineSrc from '../assets/pixel-pipeline.jpg'
+
+export default LightSlide
+
+<img src={pixelPipelineSrc} style={{ width: '100%' }} />
+
+---
+
+# A better accordion?
+
+---
+
+# 🙅🏻‍♀️
+
+---
+
+In my personal opinion, accordions are a **low-value** animation.
+
+---
+
+<AnimationIntroScreen title="Like Button" />
+
+---
+
+import Tweet from '../src/components/Tweet/Tweet.managed'
+
+<SpacedRow>
+  <Tweet tweetContents="Hello React Europe! 👋🏻" />
+</SpacedRow>
 
 ---
 

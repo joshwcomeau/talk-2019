@@ -20,3 +20,7 @@ I'm Josh, and I live in Canada. Because teleportation has yet to be invented, I 
 - There's this whole other side, though, and this is where most users spend most of their time.
 - Title card
 -
+
+---
+
+- The boarding process on flights has been very optimized. They have different zones, someone put a lot of work into this experience. And yet, here I am a couple days later, and I don't remember much about the first few minutes of my flying experience, I remember the 8 hours I spent crammed into a seat that was too small, my chair being kicked by the kid behind me, the old guy sneezing on me.

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import StoryWrapper from '../StoryWrapper'
 import Tweet from './Tweet'
+import TweetManaged from './Tweet.managed'
 
 const StateManager = () => {
   const [isRetweeted, setIsRetweeted] = React.useState(false)
@@ -43,7 +44,5 @@ const StateManager = () => {
 storiesOf('Tweet', module)
   .add('default', () => <Tweet />)
   .add('managed', () => (
-    <StoryWrapper>
-      <StateManager />
-    </StoryWrapper>
+    <TweetManaged tweetContents="*tap tap* is this thing on? 🎤" />
   ))

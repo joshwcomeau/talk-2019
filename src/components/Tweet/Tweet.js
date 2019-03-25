@@ -107,6 +107,7 @@ const Wrapper = styled.div`
   background: white;
   width: 580px;
   padding: 16px;
+  text-align: left;
   /* padding-bottom: 0; */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Ubuntu, 'Helvetica Neue', sans-serif;
