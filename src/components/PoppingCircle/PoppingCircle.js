@@ -5,6 +5,8 @@ import { useSpring, useTrail, animated } from 'react-spring'
 
 import useUniqueId from '../../hooks/unique-id.hook'
 
+import Svg from '../Svg'
+
 const propTypes = {
   size: PropTypes.number,
 }
@@ -42,12 +44,7 @@ const PoppingCircle = ({ size, color }) => {
   })
 
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 40 40"
-      style={{ overflow: 'visible' }}
-    >
+    <Svg width={size} height={size} viewBox="0 0 40 40">
       <defs>
         <mask id={id}>
           <rect x={-20} y={-20} width={80} height={80} fill="#FFF" />
@@ -67,7 +64,7 @@ const PoppingCircle = ({ size, color }) => {
         fill={color}
         mask={`url(#${id})`}
       />
-    </svg>
+    </Svg>
   )
 }
 

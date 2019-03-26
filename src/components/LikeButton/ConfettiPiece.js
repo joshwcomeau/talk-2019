@@ -8,7 +8,7 @@ import Particle from '../Particle'
 const getRandomColor = () =>
   sample(['#e53935', '#1e88e5', '#43a047', '#fdd835', '#fb8c00'])
 
-const getRandomSize = () => random(3, 6)
+const getRandomSize = () => random(6, 9)
 
 const ConfettiPiece = () => {
   const color = React.useRef(getRandomColor())
