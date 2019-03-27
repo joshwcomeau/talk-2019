@@ -56,21 +56,13 @@ import mythbustersSrc from '../assets/mythbusters.mp4'
 
 ---
 
-...Of course, this assumes that people actually _follow_ the instructions
-
-[pic of people milling around ignoring board order]
-
----
-
-Clearly, there is a lot of energy around improving boarding.
-
-And things have been improving!
-
----
-
 import unitedSrc from '../assets/united.mp4'
 
 <video controls src={unitedSrc} style={{ width: '100%' }} />
+
+---
+
+Boarding is indeed important...
 
 ---
 
@@ -102,15 +94,7 @@ clicking the link to your site, they'll eventually bail. You get less visitors.
 
 ---
 
-import craigslistSrc from '../assets/craigslist.png'
-
-<img src={craigslistSrc} style={{ width: '100%' }} />
-
----
-
-import kijijiSrc from '../assets/kijiji.png'
-
-<img src={kijijiSrc} style={{ width: '100%' }} />
+# Mobile > Web
 
 ---
 
@@ -150,16 +134,40 @@ import chantasticSrc from '../assets/chantastic.jpg'
 
 ---
 
+The web is an amazing open platform.
+
+---
+
+import codesandboxNetlifySrc from '../assets/codesandbox-netlify.jpg'
+
+<img src={codesandboxNetlifySrc} style={{ width: '100%' }} />
+
+---
+
+It is incredibly **low-friction** to ship something on the web.
+
+The web is full of delightful, oddball experiences because of it.
+
+---
+
+In order to keep the web relevant, we need to create native-mobile-quality experiences.
+
+---
+
 <AnimationIntroScreen title="Accordions" />
 
 ---
 
 <!--
 
-Look at the accordion in https://getbootstrap.com/docs/4.0/components/collapse/#accordion-example
-
-Pull up the devtools, to show how much work is done by the GPU and in raster to get each frame painted
-
+- Go to the bootstrap accordion demo, show how it works
+- Pull up the devtools
+- Record opening and closing
+- Explain the FPS count - ideally we want 60fps. This is the native refresh rate of a lot of devices, and it's also just a buttery target.
+- 60fps -> 16.6ms/frame
+- zoom into a slower frame
+- Focus on layout and paint
+- Show how the ENTIRE PAGE is being repainted
 -->
 
 <ExternalLink href="https://getbootstrap.com/docs/4.0/components/collapse/#accordion-example">
@@ -189,6 +197,10 @@ export default LightSlide
 
 ---
 
+Playground showing the different properties we can animate
+
+---
+
 # A better accordion?
 
 ---
@@ -210,6 +222,10 @@ import Tweet from '../src/components/Tweet/Tweet.managed'
 <SpacedRow>
   <Tweet tweetContents="Hello React Europe! 👋🏻" />
 </SpacedRow>
+
+---
+
+Show larger, slower version of the animation
 
 ---
 
