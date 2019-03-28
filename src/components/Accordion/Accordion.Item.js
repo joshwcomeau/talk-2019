@@ -38,11 +38,20 @@ const AccordionItem = ({ title, children }) => {
 const dropIn = keyframes`
   from {
     transform: translateY(-10px);
-    opacity: 0;
   }
 
   to {
     transform: translateY(0px);
+  }
+`
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 `
 
@@ -68,7 +77,7 @@ const Body = styled.div`
 `
 
 const BodyContents = styled.div`
-  animation: ${dropIn} 400ms ease-out;
+  animation: ${dropIn} 300ms ease-out, ${fadeIn} 1000ms ease-out;
 `
 
 export default AccordionItem
