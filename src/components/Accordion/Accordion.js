@@ -15,17 +15,12 @@ const Accordion = ({ children }) => {
 }
 
 const Wrapper = styled.div`
+  width: 100%;
   margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 `
 
 Accordion.Item = AccordionItem
 
 export default Accordion
-
-{
-  /* <Accordion>
-  <Accordion.Item title="Will it blend?">
-    That is the question.
-  </Accordion.Item>
-</Accordion> */
-}
