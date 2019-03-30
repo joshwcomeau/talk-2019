@@ -1,5 +1,7 @@
 import { Cite } from 'spectacle'
-import { LightSlide, CodeSlide } from './slides'
+import CodeSlide from 'spectacle-code-slide'
+
+import { LightSlide } from './slides'
 import RegularComponent from './regular-component'
 import TitleCard from '../src/components/TitleCard'
 import PoppingCircle from '../src/components/PoppingCircle'
@@ -24,6 +26,18 @@ I flew here from Canada.
 
 ---
 
+Raise your hand if you flew here as well
+
+✋
+
+---
+
+Raise your hand if you enjoyed your flight
+
+✋
+
+---
+
 Flying is **amazing**
 
 ---
@@ -38,15 +52,15 @@ Let's talk about
 
 ---
 
-import boardRankedSrc from '../assets/plane-boarding-methods-ranked.png'
-
-<img src={boardRankedSrc} style={{ width: '100%' }} />
-
----
-
 import boardStupidSrc from '../assets/plane-boarding-stupid.png'
 
 <img src={boardStupidSrc} style={{ width: '100%' }} />
+
+---
+
+import boardRankedSrc from '../assets/plane-boarding-methods-ranked.png'
+
+<img src={boardRankedSrc} style={{ width: '100%' }} />
 
 ---
 
@@ -95,20 +109,6 @@ clicking the link to your site, they'll eventually bail. You get less visitors.
 ---
 
 # Mobile > Web
-
----
-
-Polished, professional experiences.
-
-<!--
-
-The rest of their experience is really important too. Smooth, jank-free
-animations are what make a product feel polished and professional.
-
-People like to use polished, professional experiences. And that's what they're
-getting, in native mobile apps.
-
--->
 
 ---
 
@@ -197,6 +197,20 @@ export default LightSlide
 
 ---
 
+We want to skip "Layout" and "Paint" whenever possible
+
+---
+
+Properties like `background-color` don't trigger layout.
+
+---
+
+There are only two CSS properties that don't trigger layout _and_ paint:
+
+`opacity` and `transform`
+
+---
+
 Playground showing the different properties we can animate
 
 ---
@@ -224,11 +238,47 @@ pick our battles.
 
 Note that design is often so insistent because engineers are lazy. By going the extra mile when it is performant to do so, we build trust with design, and they'll be more likely to accept it when we say "this animation just can't be done performantly on the web"
 
+It's best when designers and engineers collaborate. Understanding the limitations of the web platform is our job, that's what we bring to the collaboration.
+
 -->
 
 ---
 
-In my personal opinion, accordions are a **low-value** animation.
+export default props => (
+  <CodeSlide
+    {...props}
+    lang="js"
+    code={require('raw-loader!./code/accordion.example')}
+    ranges={[
+      { loc: [0, 270], title: 'Walking through some code' },
+      { loc: [0, 1], title: 'The Beginning' },
+      { loc: [1, 2] },
+      { loc: [1, 2], note: 'Heres a note!' },
+      { loc: [2, 3] },
+      { loc: [8, 10] },
+      // ...
+    ]}
+  />
+)
+
+---
+
+export default props => (
+  <CodeSlide
+    {...props}
+    lang="js"
+    code={require('raw-loader!./code/accordion.example')}
+    ranges={[
+      { loc: [0, 270], title: 'Walking through some code' },
+      { loc: [0, 1], title: 'The Beginning' },
+      { loc: [1, 2] },
+      { loc: [1, 2], note: 'Heres a note!' },
+      { loc: [2, 3] },
+      { loc: [8, 10] },
+      // ...
+    ]}
+  />
+)
 
 ---
 
@@ -245,6 +295,10 @@ import Tweet from '../src/components/Tweet/Tweet.managed'
 ---
 
 Show larger, slower version of the animation
+
+---
+
+Trigonometry!
 
 ---
 
