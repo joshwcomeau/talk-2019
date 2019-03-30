@@ -1,5 +1,5 @@
 import AccordionItem from './Accordion.Item'
-import AccordionContext from './Accordion.context'
+import AccordionContext from './Accordion.ctx'
 
 const Accordion = ({ children }) => {
   const [

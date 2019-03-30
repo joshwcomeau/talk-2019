@@ -247,15 +247,27 @@ It's best when designers and engineers collaborate. Understanding the limitation
 export default props => (
   <CodeSlide
     {...props}
-    lang="js"
+    lang="jsx"
+    code={require('raw-loader!./code/accordion.usage.example')}
+    ranges={[
+      { loc: [0, 5], title: 'Desired API' },
+      { loc: [9, 18], note: 'Alternative API' },
+    ]}
+  />
+)
+
+---
+
+export default props => (
+  <CodeSlide
+    {...props}
+    lang="jsx"
     code={require('raw-loader!./code/accordion.example')}
     ranges={[
-      { loc: [0, 270], title: 'Walking through some code' },
-      { loc: [0, 1], title: 'The Beginning' },
-      { loc: [1, 2] },
-      { loc: [1, 2], note: 'Heres a note!' },
-      { loc: [2, 3] },
-      { loc: [8, 10] },
+      { loc: [0], title: 'Accordion.jsx' },
+      { loc: [3, 4] },
+      { loc: [4, 9] },
+      { loc: [9, 19] },
       // ...
     ]}
   />
@@ -266,15 +278,13 @@ export default props => (
 export default props => (
   <CodeSlide
     {...props}
-    lang="js"
-    code={require('raw-loader!./code/accordion.example')}
+    lang="jsx"
+    code={require('raw-loader!./code/accordion.item.example')}
     ranges={[
-      { loc: [0, 270], title: 'Walking through some code' },
-      { loc: [0, 1], title: 'The Beginning' },
-      { loc: [1, 2] },
-      { loc: [1, 2], note: 'Heres a note!' },
+      { loc: [0], title: 'Accordion.Item.jsx' },
       { loc: [2, 3] },
-      { loc: [8, 10] },
+      { loc: [3, 8] },
+      { loc: [9, 18] },
       // ...
     ]}
   />

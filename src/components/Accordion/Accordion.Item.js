@@ -12,6 +12,9 @@ import AccordionContext from './Accordion.context'
 const AccordionItem = ({ title, children }) => {
   const { current: itemId } = React.useRef(uuid())
 
+  const titleId = `${itemId}-title`
+  const contentId = `${itemId}-content`
+
   const { openItemId, setOpenItemId } = React.useContext(AccordionContext)
 
   const isOpen = itemId === openItemId
@@ -27,15 +30,21 @@ const AccordionItem = ({ title, children }) => {
   return (
     <OuterWrapper>
       <Wrapper>
-        <Title onClick={handleToggle}>
+        <Title
+          onClick={handleToggle}
+          id={titleId}
+          aria-controls={contentId}
+          aria-expanded={isOpen}
+        >
           <IconWrapper style={{ transform: `rotate(${isOpen ? 90 : 0}deg)` }}>
             <Icon icon={chevronRight} size={20} />
           </IconWrapper>
           <Spacer size={8} />
           {title}
         </Title>
+
         {isOpen && (
-          <Body>
+          <Body role="region" id={contentId} aria-labelledby={titleId}>
             <BodyContents>{children}</BodyContents>
           </Body>
         )}

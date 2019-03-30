@@ -1,15 +1,18 @@
-import AccordionItem from './Accordion.Item'
+<Accordion>
+  <Accordion.Item title="Hello">
+    World
+  </Accordion.Item>
+</Accordion>
 
-const Accordion = ({ children }) => {
-  const [openItemId, setOpenItemId] = React.useState(null)
 
-  return (
-    <AccordionContext.Provider value={{ openItemId, setOpenItemId }}>
-      {children}
-    </AccordionContext.Provider>
-  )
-}
 
-Accordion.Item = AccordionItem
 
-export default Accordion
+// Another alternative:
+<Accordion
+  items={[
+    {
+      title: "Hello",
+      children: "World",
+    }
+  ]}
+/>

@@ -9,6 +9,10 @@ export default styled.button`
   cursor: pointer;
   text-align: left;
 
+  &:active {
+    color: inherit;
+  }
+
   &:focus {
     outline: 2px solid hotpink;
     outline-offset: 2px;
