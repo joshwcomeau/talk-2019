@@ -1,24 +1,67 @@
-import AccordionItem from './Accordion.Item'
-import AccordionContext from './Accordion.ctx'
+import React from 'react'
+import uuid from 'uuid/v1'
 
-const Accordion = ({ children }) => {
-  const [
+import Icon from './icon.js'
+import AccordionContext from './Accordion.context'
+
+import './AccordionItem.css'
+
+const AccordionItem = ({ title, children }) => {
+  const {
     openItemId,
     setOpenItemId,
-  ] = React.useState(null)
+  } = React.useContext(AccordionContext)
+
+  const {
+    current: itemId,
+  } = React.useRef(uuid())
+
+  const isOpen = itemId === openItemId
+
+  const titleId = `${itemId}-title`
+  const contentId = `${itemId}-content`
+
+  const handleToggle = () => {
+    if (isOpen) {
+      setOpenItemId(null)
+    } else {
+      setOpenItemId(itemId)
+    }
+  }
 
   return (
-    <AccordionContext.Provider
-      value={{
-        openItemId,
-        setOpenItemId,
-      }}
-    >
-      {children}
-    </AccordionContext.Provider>
+    <div>
+      <button
+        className="accordion-title"
+        onClick={handleToggle}
+        id={titleId}
+        aria-controls={contentId}
+        aria-expanded={isOpen}
+      >
+        <Icon
+          name="caret-right"
+          style={{
+            transition: 'transform 400ms',
+            transform:
+              `rotate(${isOpen ? 90 : 0}deg)`,
+          }}
+        />
+
+        {title}
+      </Title>
+
+      {isOpen && (
+        <div
+          className="accordion-body"
+          id={contentId}
+          aria-labelledby={titleId}
+          role="region"
+        >
+          {children}
+        </div>
+      )}
+    </div>
   )
 }
 
-Accordion.Item = AccordionItem
-
-export default Accordion
+export default AccordionItem

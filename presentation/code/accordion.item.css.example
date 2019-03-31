@@ -1,0 +1,27 @@
+@keyframes dropIn {
+  from {
+    transform: translateY(-10px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* prettier-ignore */
+.accordion-body {
+  animation:
+    dropIn 375ms ease-out,
+    fadeIn 1000ms;
+  will-change: transform;
+}

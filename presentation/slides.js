@@ -47,7 +47,6 @@ const lightComponents = {
     </Heading>
   ),
   p: ({ children }) => {
-    console.log({ components })
     const Paragraph = components.p
 
     return <Paragraph style={{ color: '#000' }}>{children}</Paragraph>

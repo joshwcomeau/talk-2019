@@ -170,9 +170,13 @@ In order to keep the web relevant, we need to create native-mobile-quality exper
 - Show how the ENTIRE PAGE is being repainted
 -->
 
-<ExternalLink href="https://getbootstrap.com/docs/4.0/components/collapse/#accordion-example">
-  Bootstrap accordion example
-</ExternalLink>
+[Bootstrap Accordion example](https://getbootstrap.com/docs/4.0/components/collapse/#accordion-example)
+
+---
+
+The Bootstrap accordion is slow because it _blows the budget_.
+
+Every frame takes way more than 16ms.
 
 ---
 
@@ -197,7 +201,13 @@ export default LightSlide
 
 ---
 
-We want to skip "Layout" and "Paint" whenever possible
+import noLayoutPaint from '../assets/frame-no-layout-paint.jpg'
+
+export const transition = ['none']
+
+export default LightSlide
+
+<img src={noLayoutPaint} style={{ width: '100%' }} />
 
 ---
 
@@ -205,7 +215,15 @@ Properties like `background-color` don't trigger layout.
 
 ---
 
-There are only two CSS properties that don't trigger layout _and_ paint:
+import cssTriggersSrc from '../assets/csstriggers.png'
+
+<img src={cssTriggersSrc} style={{ width: '100%' }} />
+
+[https://csstriggers.com/](https://csstriggers.com/)
+
+---
+
+We should rely primarily on two properties that can skip layout _and_ paint:
 
 `opacity` and `transform`
 
@@ -226,21 +244,6 @@ We can't build _exactly_ that animation, but we can build something close.
 import AccordionExample from '../src/components/Accordion/Accordion.example'
 
 <AccordionExample />
-
----
-
-"But design insists that it animates height!"
-
-<!--
-
-Talk about how engineers ultimately control what ships, and that we should
-pick our battles.
-
-Note that design is often so insistent because engineers are lazy. By going the extra mile when it is performant to do so, we build trust with design, and they'll be more likely to accept it when we say "this animation just can't be done performantly on the web"
-
-It's best when designers and engineers collaborate. Understanding the limitations of the web platform is our job, that's what we bring to the collaboration.
-
--->
 
 ---
 
@@ -268,7 +271,6 @@ export default props => (
       { loc: [3, 4] },
       { loc: [4, 9] },
       { loc: [9, 19] },
-      // ...
     ]}
   />
 )
@@ -282,13 +284,71 @@ export default props => (
     code={require('raw-loader!./code/accordion.item.example')}
     ranges={[
       { loc: [0], title: 'Accordion.Item.jsx' },
-      { loc: [2, 3] },
-      { loc: [3, 8] },
-      { loc: [9, 18] },
-      // ...
+      { loc: [8, 9] },
+      { loc: [9, 13] },
+      { loc: [14, 17] },
+      { loc: [18, 19] },
+      { loc: [23, 29] },
+      { loc: [33, 40] },
+      { loc: [49, 50] },
+      { loc: [40, 48] },
+      { loc: [52, 62] },
     ]}
   />
 )
+
+---
+
+export default props => (
+  <CodeSlide
+    {...props}
+    lang="js"
+    code={require('raw-loader!./code/accordion.item.css.example')}
+    ranges={[
+      { loc: [0], title: 'Accordion.Item.css' },
+      { loc: [0, 9] },
+      { loc: [10, 19] },
+      { loc: [21, 27] },
+    ]}
+  />
+)
+
+---
+
+`will-change` allows the browser to push<br />this element onto its own layer.
+
+This enables animations to skip the<br />"paint" step in the pixel pipeline!
+
+---
+
+# Working with design
+
+---
+
+Work collaboratively. Build trust.
+
+<!--
+
+Talk about how engineers ultimately control what ships, and that we should
+pick our battles.
+
+Note that design is often so insistent because engineers are lazy. By going the extra mile when it is performant to do so, we build trust with design, and they'll be more likely to accept it when we say "this animation just can't be done performantly on the web"
+
+It's best when designers and engineers collaborate. Understanding the limitations of the web platform is our job, that's what we bring to the collaboration.
+
+-->
+
+---
+
+# Don't be afraid to break the rules\*
+
+\*As long as you're profiling!
+
+---
+
+import khanMenu from '../assets/khan-menu.gif'
+
+<img src={khanMenu} />
 
 ---
 
@@ -316,6 +376,10 @@ Dig into the code a bit for the original
 
 ---
 
+# Sprites
+
+---
+
 import LikeSprite from '../src/components/LikeSprite'
 
 <LikeSprite />
@@ -324,9 +388,7 @@ import LikeSprite from '../src/components/LikeSprite'
 
 ---
 
-import spriteMakingSrc from '../assets/sprite-making.gif'
-
-<img src={spriteMakingSrc} style={{ width: '100%' }} />
+Show process with Giphy, ezgif, photoshop
 
 ---
 
@@ -338,6 +400,38 @@ Show Vincent's animation analysis tool thing. Not only is it much less work, it 
 
 ---
 
+<AnimationIntroScreen title="Offscreen Canvas" />
+
 ---
 
-Affordance: https://blog.teamtreehouse.com/affordances-web-design
+Quick Tinkersynth demo
+
+---
+
+# The Problem
+
+The art generation function is slow.
+
+Painting to canvas is slow.
+
+---
+
+# Web Workers
+
+We can do all of the art calculations in a worker.
+
+Workers don't have access to the DOM, though, so painting to canvas is still really slow.
+
+---
+
+# OffscreenCanvas
+
+OffscreenCanvas is a _separate thread_ that has _access to the Canvas DOM node_.
+
+---
+
+Show before/after
+
+---
+
+# Conclusion

@@ -118,6 +118,7 @@ const IconWrapper = styled.span`
   color: hsl(215, 100%, 60%);
   transform-origin: center center;
   transition: transform 200ms;
+  will-change: transform;
 `
 
 const Body = styled.div`

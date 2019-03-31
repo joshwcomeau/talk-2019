@@ -22,6 +22,10 @@ import {
   TableItem,
 } from 'spectacle'
 
+const WrappedLink = props => (
+  <Link target="_blank" style={{ color: '#6AA8FF' }} {...props} />
+)
+
 const _Heading = size => {
   const component = ({ children }) => <Heading size={size}>{children}</Heading>
   component.propTypes = { children: PropTypes.node }
@@ -57,7 +61,7 @@ const Paragraph = styled.p`
 `
 
 export default {
-  a: Link,
+  a: WrappedLink,
   blockquote: _CombineBlockQuote,
   code: _CodePane,
   del: _S('strikethrough'),
