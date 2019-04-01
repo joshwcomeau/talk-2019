@@ -14,27 +14,25 @@ const TweetManaged = ({ tweetContents }) => {
   )
 
   return (
-    <React.Fragment>
-      <Tweet
-        tweetContents={tweetContents}
-        displayName="Josh ✨"
-        username="joshwcomeau"
-        avatarSrc="http://placekitten.com/128/128"
-        timestamp={new Date()}
-        numOfRetweets={numOfRetweets}
-        numOfLikes={numOfLikes}
-        isRetweetedByCurrentUser={isRetweeted}
-        isLikedByCurrentUser={isLiked}
-        handleToggleLike={() => {
-          setNumOfLikes(isLiked ? numOfLikes - 1 : numOfLikes + 1)
-          setIsLiked(!isLiked)
-        }}
-        handleToggleRetweet={() => {
-          setNumOfRetweets(isRetweeted ? numOfRetweets - 1 : numOfRetweets + 1)
-          setIsRetweeted(!isRetweeted)
-        }}
-      />
-    </React.Fragment>
+    <Tweet
+      tweetContents={tweetContents}
+      displayName="Josh ✨"
+      username="joshwcomeau"
+      avatarSrc="http://placekitten.com/128/128"
+      timestamp={new Date()}
+      numOfRetweets={numOfRetweets}
+      numOfLikes={numOfLikes}
+      isRetweetedByCurrentUser={isRetweeted}
+      isLikedByCurrentUser={isLiked}
+      handleToggleLike={() => {
+        setNumOfLikes(isLiked ? numOfLikes - 1 : numOfLikes + 1)
+        setIsLiked(!isLiked)
+      }}
+      handleToggleRetweet={() => {
+        setNumOfRetweets(isRetweeted ? numOfRetweets - 1 : numOfRetweets + 1)
+        setIsRetweeted(!isRetweeted)
+      }}
+    />
   )
 }
 

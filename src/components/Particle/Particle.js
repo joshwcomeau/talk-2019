@@ -3,18 +3,17 @@ import { useSpring, interpolate, animated } from 'react-spring'
 
 import { random, sample } from '../../utils'
 
-const Particle = ({ children }) => {
+const Particle = ({ children, startDistance, travelDistance }) => {
   const angle = React.useRef(random(0, Math.PI * 2 * 100) / 100)
-
-  const startDistance = React.useRef(random(15, 20))
-  const endDistance = React.useRef(startDistance.current + random(5, 15))
   const delay = React.useRef(sample([0, 100, 200]))
 
-  const startX = Math.cos(angle.current) * startDistance.current
-  const startY = Math.sin(angle.current) * startDistance.current
+  console.log({ startDistance, travelDistance })
 
-  const endX = Math.cos(angle.current) * endDistance.current
-  const endY = Math.sin(angle.current) * endDistance.current
+  const startX = Math.cos(angle.current) * startDistance
+  const startY = Math.sin(angle.current) * startDistance
+
+  const endX = Math.cos(angle.current) * travelDistance
+  const endY = Math.sin(angle.current) * travelDistance
 
   const positionSpring = useSpring({
     x: endX,

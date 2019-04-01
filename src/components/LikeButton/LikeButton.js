@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { range } from '../../utils'
+
 import PoppingCircle from '../PoppingCircle'
 import UnstyledButton from '../UnstyledButton'
 
@@ -8,26 +10,20 @@ import ConfettiPiece from './ConfettiPiece'
 import Pop from '../Pop'
 import Heart from './Heart'
 
-const LikeButton = ({ isLiked }) => {
-  const heart = <Heart width={24} isToggled={isLiked} />
+const LikeButton = ({ isLiked, numOfConfettiPieces = 12, size = 40 }) => {
+  const heartSize = size * 0.6
+
+  const heart = <Heart width={heartSize} isToggled={isLiked} />
 
   return (
-    <Wrapper>
+    <Wrapper style={{ width: size, height: size }}>
       <Background>
-        {isLiked && <PoppingCircle />}
+        {isLiked && <PoppingCircle size={size} />}
 
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
-        {isLiked ? <ConfettiPiece /> : null}
+        {isLiked &&
+          range(numOfConfettiPieces).map(i => (
+            <ConfettiPiece parentSize={size} key={i} />
+          ))}
       </Background>
 
       <Foreground>{isLiked ? <Pop>{heart}</Pop> : heart}</Foreground>
@@ -37,8 +33,6 @@ const LikeButton = ({ isLiked }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  width: 40px;
-  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;

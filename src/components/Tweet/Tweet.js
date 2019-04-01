@@ -9,6 +9,7 @@ import Spacer from '../Spacer'
 import Action from './Action'
 import Stat from './Stat'
 import TweetActionIcon from './TweetActionIcon'
+import UnstyledButton from '../UnstyledButton'
 
 const propTypes = {
   displayName: PropTypes.string.isRequired,
