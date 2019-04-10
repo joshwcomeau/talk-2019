@@ -23,7 +23,7 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-icons-kit": "^1.2.1",
-    "react-router-dom": "^4.4.0",
+    "react-router-dom": "^4.4.0-beta.8",
     "react-spring": "^8.0.15",
     "react-transition-group": "2",
     "spectacle": "5.4.0",
