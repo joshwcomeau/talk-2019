@@ -22,6 +22,10 @@ import {
   TableItem,
 } from 'spectacle'
 
+const WrappedListItem = props => (
+  <ListItem style={{ color: '#FFF' }} {...props} />
+)
+
 const WrappedLink = props => (
   <Link target="_blank" style={{ color: '#6AA8FF' }} {...props} />
 )
@@ -74,7 +78,7 @@ export default {
   h6: _Heading(6),
   img: Image,
   codespan: Code,
-  li: ListItem,
+  li: WrappedListItem,
   p: Paragraph,
   strong: _S('bold'),
   ul: List,
