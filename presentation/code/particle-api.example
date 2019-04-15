@@ -1,5 +1,5 @@
 <Particle
-  angle={Math.PI * 0.25}
+  angle={45}
   distance={100}
 >
   <Circle color="red" />

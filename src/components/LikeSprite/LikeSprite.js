@@ -22,6 +22,7 @@ const Wrapper = styled.div`
   height: 72px;
   background: white;
   overflow: hidden;
+  margin: auto;
 `
 
 const Img = styled.img`
