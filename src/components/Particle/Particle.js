@@ -7,8 +7,6 @@ const Particle = ({ children, startDistance, travelDistance }) => {
   const angle = React.useRef(random(0, Math.PI * 2 * 100) / 100)
   const delay = React.useRef(sample([0, 100, 200]))
 
-  console.log({ startDistance, travelDistance })
-
   const startX = Math.cos(angle.current) * startDistance
   const startY = Math.sin(angle.current) * startDistance
 

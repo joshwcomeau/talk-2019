@@ -10,7 +10,7 @@ import Spacer from '../Spacer'
 import AccordionContext from './Accordion.context'
 
 const AccordionItem = ({ title, children }) => {
-  const { current: itemId } = React.useRef(uuid())
+  const [itemId] = React.useState(() => console.log('uuu') || uuid())
 
   const titleId = `${itemId}-title`
   const contentId = `${itemId}-content`
@@ -57,7 +57,7 @@ const AccordionItem = ({ title, children }) => {
 
 const dropIn = keyframes`
   from {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
   }
 
   to {
@@ -131,7 +131,7 @@ const Body = styled.div`
 // prettier-ignore
 const BodyContents = styled.div`
   animation:
-    ${dropIn} 375ms cubic-bezier(0.17, 0.99, 0.66, 1.11),
+    ${dropIn} 575ms cubic-bezier(0.17, 0.99, 0.66, 1.11),
     ${fadeIn} 1000ms;
   will-change: transform;
 `

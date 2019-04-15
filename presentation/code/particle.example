@@ -1,0 +1,30 @@
+import { convertDegreesToRadians } from '../../src/utils'
+
+const Particle = ({
+  angle,
+  distance,
+  children,
+}) => {
+  const angleInRads =
+    convertDegreesToRadians(angle)
+
+  const y =
+    Math.sin(angleInRads) * distance
+  const x =
+    Math.cos(angleInRads) * distance
+
+  const spring = useSpring({
+    transform: `translate(${x}px, ${y}px)`,
+    from: {
+      transform: 'translate(0px, 0px)',
+    }
+  })
+
+  return (
+    <animated.div style={spring}>
+      {children}
+    </animated.div>
+  )
+}
+
+export default Particle;

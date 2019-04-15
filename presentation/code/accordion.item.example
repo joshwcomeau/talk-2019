@@ -12,9 +12,7 @@ const AccordionItem = ({ title, children }) => {
     setOpenItemId,
   } = React.useContext(AccordionContext)
 
-  const {
-    current: itemId,
-  } = React.useRef(uuid())
+  const itemId = useId()
 
   const isOpen = itemId === openItemId
 
