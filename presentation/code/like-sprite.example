@@ -13,21 +13,23 @@ const LikeSprite = () => {
 
 const backgroundAnimation = keyframes`
   to {
-    transform: translateX(-4896px);
+    transform: translateX(-2448px);
   }
 `
 
 const Wrapper = styled.div`
-  width: 144px;
-  height: 144px;
-  background: white;
+  width: 72px;
+  height: 72px;
   overflow: hidden;
-  margin: auto;
 `
 
 const Img = styled.img`
   height: 100%;
-  animation: ${backgroundAnimation} 1000ms steps(34) infinite;
+  animation:
+    ${backgroundAnimation}
+    1000ms
+    steps(34)
+    infinite;
 `
 
 export default LikeSprite

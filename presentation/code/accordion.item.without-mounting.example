@@ -48,16 +48,33 @@ const AccordionItem = ({ title, children }) => {
         {title}
       </Title>
 
-      {isOpen && (
-        <div
-          className="accordion-body"
-          id={contentId}
-          aria-labelledby={titleId}
-          role="region"
+      <div
+        className="accordion-body"
+        id={contentId}
+        aria-labelledby={titleId}
+        role="region"
+        style={{
+          opacity: isOpen ? 1 : 0,
+          transform:
+            `translateY(${
+              isOpen ? 0 : -12
+            }px)
+          `,
+          transition: `
+            transform 500ms,
+            opacity 1000ms`,
+        }}
+      >
+        <span
+          style={{
+            display: isOpen
+              ? 'block'
+              : 'none',
+          }}
         >
           {children}
-        </div>
-      )}
+        </span>
+      </div>
     </div>
   )
 }

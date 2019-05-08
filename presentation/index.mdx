@@ -142,6 +142,18 @@ It's a pain to get a mobile app. Have to use the app store, agree to terms, down
 
 ---
 
+Mobile apps are much higher-friction.
+
+Why, then, aren't web apps dominant?
+
+---
+
+## One Reason: User Experience
+
+Mobile apps tend to feel better
+
+---
+
 import mattPerryDevSrc from '../assets/matt-perry-dev.jpg'
 import chantasticSrc from '../assets/chantastic.jpg'
 
@@ -229,15 +241,15 @@ export default LightSlide
 
 <img src={pixelPipelineSrc} style={{ width: '100%' }} />
 
----
+<br /><br /><br />
 
-import noLayoutPaint from '../assets/frame-no-layout-paint.jpg'
-
-export const transition = ['none']
-
-export default LightSlide
-
-<img src={noLayoutPaint} style={{ width: '100%' }} />
+<div style={{ fontSize: 15 }}>
+  Courtesy of{' '}
+  <a href="https://developers.google.com/web/fundamentals/performance/rendering/">
+    Google Web Fundamentals docs
+  </a>
+  .
+</div>
 
 ---
 
@@ -277,43 +289,11 @@ export default props => (
   <CodeSlide
     {...props}
     lang="jsx"
-    code={require('raw-loader!./code/accordion.usage.example')}
+    code={require('raw-loader!./code/accordion.item.with-mounting.example')}
     ranges={[
-      { loc: [0, 5], title: 'Desired API' },
-      { loc: [9, 18], note: 'Alternative API' },
-    ]}
-  />
-)
-
----
-
-export default props => (
-  <CodeSlide
-    {...props}
-    lang="jsx"
-    code={require('raw-loader!./code/accordion.example')}
-    ranges={[
-      { loc: [0], title: 'Accordion.jsx' },
-      { loc: [3, 4] },
-      { loc: [4, 9] },
-      { loc: [9, 19] },
-    ]}
-  />
-)
-
----
-
-export default props => (
-  <CodeSlide
-    {...props}
-    lang="jsx"
-    code={require('raw-loader!./code/accordion.item.example')}
-    ranges={[
-      { loc: [0], title: 'Accordion.Item.jsx' },
+      { loc: [0], title: 'Accordion Item' },
       { loc: [8, 9] },
       { loc: [9, 13] },
-      { loc: [14, 15] },
-      { loc: [16, 17] },
       { loc: [21, 27] },
       { loc: [31, 38] },
       { loc: [47, 48] },
@@ -328,22 +308,11 @@ export default props => (
 export default props => (
   <CodeSlide
     {...props}
-    lang="js"
-    code={require('raw-loader!./code/accordion.item.css.example')}
-    ranges={[
-      { loc: [0], title: 'Accordion.Item.css' },
-      { loc: [0, 9] },
-      { loc: [10, 19] },
-      { loc: [21, 27] },
-    ]}
+    lang="jsx"
+    code={require('raw-loader!./code/accordion.item.without-mounting.example')}
+    ranges={[{ loc: [50, 67] }, { loc: [55, 67] }, { loc: [67, 76] }]}
   />
 )
-
----
-
-`will-change` allows the browser to push<br />this element onto its own layer.
-
-This enables animations to skip the<br />"paint" step in the pixel pipeline!
 
 ---
 
@@ -455,6 +424,23 @@ export default LightSlide
 
 ---
 
+export default props => (
+  <CodeSlide
+    {...props}
+    lang="jsx"
+    code={require('raw-loader!./code/like-sprite.example')}
+    ranges={[
+      { loc: [0], title: 'LikeSprite.js' },
+      { loc: [5, 12] },
+      { loc: [13, 18] },
+      { loc: [19, 24] },
+      { loc: [25, 33] },
+    ]}
+  />
+)
+
+---
+
 [Performance](http://localhost:6006/?path=/story/likesprite--default)
 
 ---
@@ -495,7 +481,7 @@ Workers don't have access to the DOM, though, so painting to canvas is still rea
 
 # OffscreenCanvas
 
-OffscreenCanvas is a _separate thread_ that has _access to the Canvas DOM node_.
+OffscreenCanvas allows you to _paint to a canvas_ from _within a web worker_.
 
 ---
 

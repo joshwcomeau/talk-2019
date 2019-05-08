@@ -43,11 +43,19 @@ const AccordionItem = ({ title, children }) => {
           {title}
         </Title>
 
-        {isOpen && (
-          <Body role="region" id={contentId} aria-labelledby={titleId}>
-            <BodyContents>{children}</BodyContents>
-          </Body>
-        )}
+        <Body
+          role="region"
+          id={contentId}
+          aria-labelledby={titleId}
+          style={{
+            transform: `translateY(${isOpen ? 0 : -12}px)`,
+            opacity: isOpen ? 1 : 0,
+          }}
+        >
+          <BodyContents style={{ display: isOpen ? 'block' : 'none' }}>
+            {children}
+          </BodyContents>
+        </Body>
       </Wrapper>
 
       <BackgroundBox />
@@ -111,6 +119,7 @@ const Title = styled(UnstyledButton)`
   padding: 20px;
   font-size: 18px;
   font-weight: 600;
+  border-bottom: 1px solid hsla(251, 48%, 51%, 0.1);
 `
 
 const IconWrapper = styled.span`
@@ -118,22 +127,16 @@ const IconWrapper = styled.span`
   color: hsl(215, 100%, 60%);
   transform-origin: center center;
   transition: transform 200ms;
-  will-change: transform;
 `
 
 const Body = styled.div`
-  padding: 20px;
-  border-top: 1px solid hsla(251, 48%, 51%, 0.1);
   font-size: 16px;
   text-align: left;
+  transition: transform 550ms, opacity 1000ms;
 `
 
-// prettier-ignore
 const BodyContents = styled.div`
-  animation:
-    ${dropIn} 575ms cubic-bezier(0.17, 0.99, 0.66, 1.11),
-    ${fadeIn} 1000ms;
-  will-change: transform;
+  padding: 20px;
 `
 
 export default AccordionItem
