@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const ExternalLink = props => <Wrapper {...props} target="_blank" />
 
 const Wrapper = styled.a`
-  color: #3344ff;
+  color: #00edff;
   text-decoration: none;
 
   &:hover {

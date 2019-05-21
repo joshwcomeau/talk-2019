@@ -1,59 +1,23 @@
-# Spectacle Boilerplate
+# Josh's 2019 Talk on Web Performance
 
-## Contents
+Hi!
 
-- [Reference](#reference)
-- [Getting Started](#getting-started)
-- [Build & Deployment](#build-deployment)
+### Code Snippets
 
-## Reference
+The code samples shown in the presentation can be found in [presentation/code](https://github.com/joshwcomeau/talk-2019/tree/master/presentation/code). They may or may not run. They're mostly meant to be examples, but if something caught your eye in them, have at it!
 
-The Spectacle core API is available at [https://github.com/FormidableLabs/spectacle/blob/master/README.md](https://github.com/FormidableLabs/spectacle/blob/master/README.md).
+### Accordion
 
-For more information about MDX syntax and how it all works, check out the [MDX documentation](https://mdxjs.com/).
+The live-running code for the accordion can be found in [src/components/Accordion](https://github.com/joshwcomeau/talk-2019/tree/master/src/components/Accordion).
 
-### Slides
+### Twitter Like Button
 
-Slides are separated with `---`.
+My twist on the Twitter "like" animation can be found in [src/components/LikeButton](https://github.com/joshwcomeau/talk-2019/tree/master/src/components/LikeButton). The Sprite variant can be found in [src/components/LikeSprite](https://github.com/joshwcomeau/talk-2019/tree/master/src/components/LikeSprite)
 
-To customize specific MDX functionality in Spectacle Boilerplate MDX, including what characters are used to demarcate slide breaks, refer to the `loader.js` file. We don't recommend altering this functionality unless necessary.
+### OffscreenCanvas
 
-## Getting Started
+My talk only briefly mentioned OffscreenCanvas, and truthtfully it's not something I have a perfectly-isolated demo for... but I use it extensively in [Tinkersynth](https://github.com/joshwcomeau/tinkersynth), and its source is open!
 
-After downloading the boilerplate, your first order of business is to open a terminal and run 
-```bash
-yarn
-```
-or 
-```bash
-npm install
-```
+---
 
-Next, run 
-```bash
-rm -R .git
-```
-to remove the existing version control.
-
-Then, to start up the local server, run
-```bash
-yarn start
-```
-or
-```bash
-npm start
-```
-
-Open a browser and hit [http://localhost:3000](http://localhost:3000), and you're ready to roll. Modify `index.mdx` to see changes, but the best part about MDX is that you can create your own React components and import them into the `index.mdx` file to seamlessly integrate with markdown!
-
-## Build & Deployment
-
-Building the dist version of the project is as easy as running
-```bash
-npm run build
-```
-
-If you want to deploy the slideshow to surge, run 
-```bash
-npm run deploy
-```
+Thanks, hope you enjoyed my talk!

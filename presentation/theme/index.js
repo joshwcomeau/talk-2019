@@ -3,8 +3,9 @@ import createTheme from '../../createTheme'
 export const colors = {
   primary: 'white',
   secondary: '#19181F', // almost black w/ blueish tint
-  tertiary: '#6FA0FF', // Light blue
+  tertiary: '#ff00f6', // Hot pink
   quaternary: '#CECECE', // pale gray
+  yellow: '#ffd000',
 }
 
 const theme = createTheme(
@@ -24,7 +25,7 @@ const theme = createTheme(
         h2: {
           fontSize: '4rem',
           textTransform: 'uppercase',
-          color: colors.tertiary,
+          color: colors.yellow,
         },
         h3: {
           fontSize: '3.5rem',

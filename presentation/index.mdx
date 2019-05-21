@@ -38,13 +38,23 @@ Keep your hand raised if you enjoyed your flight
 
 Flying is **amazing**
 
-<!--
+---
 
-I flew >5000km.
+import flying1 from '../assets/flying-1.jpg'
 
-Flying is ~100 years old.
+<img src={flying1} style={{ width: '100%' }} />
 
--->
+---
+
+import flying2 from '../assets/flying-2.jpg'
+
+<img src={flying2} style={{ width: '100%' }} />
+
+---
+
+import flying3 from '../assets/flying-3.jpg'
+
+<img src={flying3} style={{ width: '100%' }} />
 
 ---
 
@@ -120,7 +130,7 @@ export default LightSlide
 
 ---
 
-Why is after-load performance important?
+Why is this important?
 
 <!--
 
@@ -143,6 +153,18 @@ It's a pain to get a mobile app. Have to use the app store, agree to terms, down
 ---
 
 Mobile apps are much higher-friction.
+
+---
+
+export default LightSlide
+
+import fbMobileApp from '../assets/fb-mobile-app.png'
+
+<img src={fbMobileApp} style={{ width: '100%' }} />
+
+---
+
+# Question:
 
 Why, then, aren't web apps dominant?
 
@@ -170,7 +192,7 @@ import chantasticSrc from '../assets/chantastic.jpg'
 
 ---
 
-## Relevance
+# Relevance
 
 <!-- Matt Perry's ideas about the web as a uniquely open platform -->
 
@@ -192,7 +214,7 @@ import webflowSrc from '../assets/webflow.mp4'
 
 ---
 
-It is incredibly **low-friction** to ship something on the web.
+The web is _low-friction_ both for consumers and developers.
 
 The web is content-rich because of it.
 
@@ -363,7 +385,7 @@ export default props => (
 
 # Trigonometry!
 
-[jspaint.app](https://jspaint.app/#local:e384b0922acea)
+[jspaint.app](https://jspaint.app)
 
 <!-- soh-cah-toa, figuring out angle and distance -->
 
@@ -387,7 +409,7 @@ export default props => (
 
 ---
 
-Wait this is a performance talk
+...wait this is a performance talk
 
 ---
 
@@ -397,12 +419,15 @@ import likeBeforeSrc from '../assets/like-before.png'
 
 ---
 
-[Animation Perf Test](https://codepen.io/joshwcomeau/pen/yrPzWO)
+## Also, this animation runs on the main thread.
+
+[Perf test](https://codepen.io/joshwcomeau/pen/yrPzWO)
 
 ---
 
 # Options
 
+- Less particles
 - Use CSS transitions
 - Sprites
 
@@ -441,7 +466,9 @@ export default props => (
 
 ---
 
-[Performance](http://localhost:6006/?path=/story/likesprite--default)
+# The performance
+
+Near-free. Takes a few microseconds per tick.
 
 ---
 
@@ -456,6 +483,8 @@ export default props => (
 <AnimationIntroScreen title="Offscreen Canvas" />
 
 ---
+
+# So I built a thing
 
 [Tinkersynth](https://tinkersynth.com)
 
@@ -495,9 +524,9 @@ import tinkersynthYikesSrc from '../assets/tinkersynth-yikes.mp4'
 
 ---
 
-#### Dystopian future:
+## There's two sides to the "performance" coin, and they both matter.
 
-the web becomes a relic that only grandparents use.
+Imagine the innovations we could come up with if we put actual energy into these problems.
 
 ---
 

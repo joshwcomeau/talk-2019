@@ -27,7 +27,7 @@ const WrappedListItem = props => (
 )
 
 const WrappedLink = props => (
-  <Link target="_blank" style={{ color: '#6AA8FF' }} {...props} />
+  <Link target="_blank" style={{ color: '#00edff' }} {...props} />
 )
 
 const _Heading = size => {
