@@ -1,6 +1,6 @@
 # Josh's 2019 Talk on Web Performance
 
-Hi!
+Hi there!
 
 ### Code Snippets
 
