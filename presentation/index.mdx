@@ -106,11 +106,11 @@ What does this have to do with anything?
 
 ### Things we optimize for performance:
 
+- Client-side routing
 - Server-side rendering
 - Code-splitting
-- Reducing bundle sizes
-- Lazy-loading assets
-- Single Page App
+- Tree-shaking
+- Lazy-loading
 
 ---
 
@@ -150,6 +150,21 @@ import amazonArticle from '../assets/amazon-article.png'
 import slowLoading from '../assets/slow-loading.jpg'
 
 <img src={slowLoading} style={{ width: '100%' }} />
+
+
+---
+
+import amazonArticle2 from '../assets/amazon-article-pt2.png'
+
+<ExternalLink href="https://www.gigaspaces.com/blog/amazon-found-every-100ms-of-latency-cost-them-1-in-sales/">
+<img src={amazonArticle2} style={{ height: '100%' }} />
+</ExternalLink>
+
+---
+
+import mansplaining from '../assets/mansplaining.png'
+
+<img src={mansplaining} style={{ height: '100%' }} />
 
 ---
 
@@ -191,13 +206,25 @@ import inputDelaySrc from '../assets/input-delay.mp4'
 
 ---
 
-It gets worse with contrast.
+# People dislike staring at a blank speed, but feedback delays are even worse!
+
+---
+
+# Case Study: EMT feedback
+
+---
+
+Photo of the EMT
+
+---
+
+---
+
+There are other ecosystems than the web.
 
 <!--
 
-It's easy to make the case for page-load time;
-If someone spends more than X seconds staring at a blank screen after
-clicking the link to your site, they'll eventually bail. You get less visitors.
+The web is not the only ecosystem out there - we can compare and contrast with mobile
 
 -->
 
@@ -213,7 +240,7 @@ It's a pain to get a mobile app. Have to use the app store, agree to terms, down
 
 ---
 
-Mobile apps are much higher-friction.
+Mobile apps are much higher-friction, in terms of first-time latency
 
 ---
 
@@ -231,11 +258,28 @@ import fbMobileApp from '../assets/fb-mobile-app.png'
 
 ---
 
+<!--
+
+Add more-recent screenshot
+
+-->
+
+---
+
 Mario 64 was 32 megabytes.
 
 ---
 
-Why, then, aren't web apps dominant?
+# Context matters
+
+People never like waiting, but the tolerances vary.
+
+
+---
+
+# The Takeaway
+
+Initial load time
 
 ---
 
@@ -593,17 +637,21 @@ import tinkersynthYikesSrc from '../assets/tinkersynth-yikes.mp4'
 
 ---
 
-## There's two sides to the "performance" coin, and they both matter.
-
-Imagine the innovations we could come up with if we put actual energy into these problems.
+## People hate waiting seconds for a page to load
 
 ---
 
-We can help **preserve the web's relevance** by building good, polished products.
+## People hate waiting tenths of seconds for feedback for their actions
 
 ---
 
-Smooth animations and interactions are a hallmark of quality.
+## People hate waiting hundredths of seconds for each frame in an animation
+
+---
+
+The problems are similar, but the solutions are very different.
+
+It's worth learning the "full stack" of front-end web performance.
 
 ---
 
