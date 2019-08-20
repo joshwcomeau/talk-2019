@@ -9,7 +9,15 @@ const AnimationIntroScreen = ({
 }) => {
   return (
     <Wrapper>
-      <BackgroundVideo autoPlay loop src={bokehBg} />
+      <VideoWrapper>
+        <video
+          autoPlay
+          loop
+          src={bokehBg}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      </VideoWrapper>
+
       <Foreground>
         <Subtitle>{prefix}</Subtitle>
         <Title>{title}</Title>
@@ -28,7 +36,7 @@ const Wrapper = styled.div`
 
 // normal|multiply|screen|overlay|darken|lighten|color-dodge|color-burn|difference|exclusion|hue|saturation|color|luminosity;
 
-const BackgroundVideo = styled.video`
+const VideoWrapper = styled.div`
   position: absolute;
   z-index: 0;
   top: 0;

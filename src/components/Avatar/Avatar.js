@@ -4,19 +4,13 @@ import styled from 'styled-components'
 const Avatar = ({ src, name }) => {
   return (
     <Wrapper>
-      <Img src={src} />
+      <img src={src} style={{ width: 200, height: 200, borderRadius: 100 }} />
       <Name>{name}</Name>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div``
-
-const Img = styled.img`
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-`
 
 const Name = styled.p`
   text-align: center;

@@ -4,23 +4,15 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
+  devtool: 'cheap-module-source-map',
   entry: ['babel-polyfill', './index'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/dist/',
+    publicPath: '/dist',
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
-  ],
-  optimization: {
-    minimize: true,
-  },
+  plugins: [new webpack.NamedModulesPlugin()],
   module: {
     rules: [
       {
@@ -39,18 +31,37 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        include: __dirname,
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader',
-      },
-      {
-        test: /\.(png|jpg|gif|mp4)$/,
-        loader: 'url-loader?limit=8192',
+        loaders: ['style-loader', 'raw-loader'],
+        include: __dirname,
       },
       {
         test: /\.svg$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml',
+        include: path.join(__dirname, 'assets'),
+      },
+      {
+        test: /\.png$/,
+        loader: 'url-loader?mimetype=image/png',
+        include: path.join(__dirname, 'assets'),
+      },
+      {
+        test: /\.gif$/,
+        loader: 'url-loader?mimetype=image/gif',
+        include: path.join(__dirname, 'assets'),
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'url-loader?mimetype=image/jpg',
+        include: path.join(__dirname, 'assets'),
+      },
+      {
+        test: /\.mp4$/,
+        loader: 'url-loader',
+        include: path.join(__dirname, 'assets'),
       },
     ],
   },

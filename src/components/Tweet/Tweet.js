@@ -41,7 +41,10 @@ const Tweet = ({
   return (
     <Wrapper>
       <Header>
-        <Avatar src={avatarSrc} />
+        <img
+          src={avatarSrc}
+          style={{ width: 48, height: 48, borderRadius: '50%' }}
+        />
         <Name>
           <DisplayName>{displayName}</DisplayName>
           <Username>@{username}</Username>
@@ -116,12 +119,6 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   display: flex;
-`
-
-const Avatar = styled.img`
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
 `
 
 const Name = styled.div`

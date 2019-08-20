@@ -712,9 +712,17 @@ const AccordionExample = ({ children }) => {
             </div>
           </Accordion.Item>
           <Accordion.Item title="What do cats look like?">
-            <CatImg src={cats1} />
-            <CatImg src={cats2} />
-            <CatImg src={cats3} />
+            <img
+              src={cats1}
+              style={{ display: 'block', width: '100%', marginBottom: 10 }}
+            />
+
+            <img
+              src={cats2}
+              style={{ display: 'block', width: '100%', marginBottom: 10 }}
+            />
+
+            <img src={cats3} style={{ display: 'block', width: '100%' }} />
           </Accordion.Item>
           <Accordion.Item title="Foo">Bar</Accordion.Item>
         </Accordion>
@@ -743,14 +751,19 @@ const Wrapper = styled.div`
   width: 500px;
 `
 
-const CatImg = styled.img`
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+// For unknown reasons, the presentation breaks in production
+// when I style an image directly (styled.img). So, instead, I'm
+// styling a div and selecting the child image.
+const CatImg = styled.div`
+  /* & img {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  } */
 `
 
 export default AccordionExample

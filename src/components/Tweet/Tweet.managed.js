@@ -13,6 +13,8 @@ const TweetManaged = ({ tweetContents }) => {
     Math.round(Math.random() * 1000)
   )
 
+  console.log(Tweet)
+
   return (
     <Tweet
       tweetContents={tweetContents}
