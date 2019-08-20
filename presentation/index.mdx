@@ -11,6 +11,8 @@ import Avatar from '../src/components/Avatar'
 import Footnote from '../src/components/Footnote'
 import AnimationIntroScreen from '../src/components/AnimationIntroScreen'
 import ExternalLink from '../src/components/ExternalLink'
+import FlexRow from '../src/components/FlexRow'
+import BigNumber from '../src/components/BigNumber'
 
 import './index.css'
 
@@ -130,7 +132,66 @@ export default LightSlide
 
 ---
 
-Why is this important?
+How did we get here?
+
+---
+
+import amazonArticle from '../assets/amazon-article.png'
+
+<img src={amazonArticle} style={{ width: '100%' }} />
+
+<Footnote
+  subtitle="Source: fastcompany.com"
+  href="https://www.fastcompany.com/1825005/how-one-second-could-cost-amazon-16-billion-sales"
+/>
+
+---
+
+import slowLoading from '../assets/slow-loading.jpg'
+
+<img src={slowLoading} style={{ width: '100%' }} />
+
+---
+
+import acSearchResults from '../assets/ac-search-results.png'
+
+<img src={acSearchResults} style={{ width: '100%' }} />
+
+---
+
+### Humans are impatient
+
+---
+
+And we don't become <em>more</em> patient after the initial page load.
+
+---
+
+<FlexRow>
+  <BigNumber
+    num="100ms"
+    description="time to transition UI when clicking or tapping"
+  />
+  <BigNumber num="16ms" description="time for each frame in an animation" />
+</FlexRow>
+
+---
+
+import inputDelaySrc from '../assets/input-delay.mp4'
+
+<ExternalLink href="https://input-delay.glitch.me/">
+  <video autoPlay src={inputDelaySrc} style={{ height: '100%' }} />
+</ExternalLink>
+
+<Footnote
+  title="input-delay.glitch.me"
+  subtitle="Made by Monica Dinculescu"
+  href="https://input-delay.glitch.me/"
+/>
+
+---
+
+It gets worse with contrast.
 
 <!--
 
