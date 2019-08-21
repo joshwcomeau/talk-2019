@@ -3,12 +3,15 @@ import styled from 'styled-components'
 
 import bokehBg from '../../../assets/cool-bokeh.mp4'
 
-const AnimationIntroScreen = ({ title }) => {
+const AnimationIntroScreen = ({
+  title,
+  prefix = 'Animation Investigation',
+}) => {
   return (
     <Wrapper>
       <BackgroundVideo autoPlay loop src={bokehBg} />
       <Foreground>
-        <Subtitle>Animation Investigation</Subtitle>
+        <Subtitle>{prefix}</Subtitle>
         <Title>{title}</Title>
       </Foreground>
     </Wrapper>

@@ -82,6 +82,14 @@ import boardStupidSrc from '../assets/plane-boarding-stupid.png'
 
 ---
 
+import boardBusinessSrc from '../assets/board-business.png'
+
+<img src={boardBusinessSrc} style={{ width: '100%' }} />
+
+export default LightSlide
+
+---
+
 import mythbustersSrc from '../assets/mythbusters.mp4'
 
 <video autoPlay src={mythbustersSrc} style={{ width: '100%' }} />
@@ -151,13 +159,12 @@ import slowLoading from '../assets/slow-loading.jpg'
 
 <img src={slowLoading} style={{ width: '100%' }} />
 
-
 ---
 
 import amazonArticle2 from '../assets/amazon-article-pt2.png'
 
 <ExternalLink href="https://www.gigaspaces.com/blog/amazon-found-every-100ms-of-latency-cost-them-1-in-sales/">
-<img src={amazonArticle2} style={{ height: '100%' }} />
+  <img src={amazonArticle2} style={{ height: '100%' }} />
 </ExternalLink>
 
 ---
@@ -178,7 +185,9 @@ import acSearchResults from '../assets/ac-search-results.png'
 
 ---
 
-And we don't become <em>more</em> patient after the initial page load.
+### Pop Quiz
+
+Do you think we become <em>more</em> or <em>less</em> patient after the initial page load?
 
 ---
 
@@ -206,41 +215,109 @@ import inputDelaySrc from '../assets/input-delay.mp4'
 
 ---
 
-# People dislike staring at a blank speed, but feedback delays are even worse!
+Staring at a white screen is bad.
+
+Having noticeable feedback delay is worse!
 
 ---
 
-# Case Study: EMT feedback
+<AnimationIntroScreen prefix="Case Study" title="EMT Software" />
 
 ---
 
-Photo of the EMT
+import pcrSrc from '../assets/patient-care-report.png'
+
+<img src={pcrSrc} style={{ width: '100%' }} />
+
+<Footnote
+  title={'"Performance Matters"'}
+  subtitle="Hillel Wayne"
+  href="https://www.hillelwayne.com/post/performance-matters"
+/>
 
 ---
 
----
-
-There are other ecosystems than the web.
-
-<!--
-
-The web is not the only ecosystem out there - we can compare and contrast with mobile
-
--->
+- 30,000,000 PCRs filled out per year, many by hand
+- Written in emergency situations, in-ambulance
+- Mistakes can be fatal (did they write 100mg or 160mg?)
 
 ---
 
-# Mobile vs. Web
-
-<!--
-
-It's a pain to get a mobile app. Have to use the app store, agree to terms, download several hundred megabytes, deal with annoying push notifications.
-
--->
+A software version exists, and it's better in every measurable way, but nobody uses it.
 
 ---
 
-Mobile apps are much higher-friction, in terms of first-time latency
+The machine it runs on is low-powered, and every input comes with a 250ms delay.
+
+---
+
+Nobody wants to use software with noticeable input lag.
+
+---
+
+<ExternalLink href="https://www.hillelwayne.com/post/performance-matters">
+  hillelwayne.com/post/performance-matters
+</ExternalLink>
+
+---
+
+# Fixing input lag
+
+- Spot the problem with React DevTools
+- Avoid unnecessary renders with _React.memo()_
+- Move complex work off of the main thread.
+- Prioritize updates with React Fiber\*
+
+<br />
+<br />
+
+\* Still unstable I think?
+
+---
+
+There are resources for this stuff 🎉
+
+---
+
+# What about animations?
+
+---
+
+When applied tastefully, animations provide important visual context and
+feedback. Animations can make your UI feel tangible.
+
+---
+
+A janky animation breaks the illusion, and the dissonance is uncomfortable.
+
+---
+
+Effectively, there are 3 categories of performance:
+
+1. Initial load performance
+2. Input feedback performance
+3. Animation performance
+
+---
+
+# Native Mobile vs. Web
+
+---
+
+### 1. Initial Load Performance
+
+Web apps take a couple seconds to load, and can be accessed instantly.
+
+<div
+  style={{ color: 'white', fontSize: 22, fontFamily: "'Merriweather',serif" }}
+>
+  Mobile apps require navigating the App Store, finding the app, checking your
+  password manager to figure out what your iCloud password is, downloading an
+  enormous file, installing it, deal with permissions, swipe through your home
+  screens to find the app, and open it.
+</div>
+
+**Winner: 🕸️**
 
 ---
 
@@ -252,40 +329,39 @@ Guess how large the Facebook mobile app is?
 
 export default LightSlide
 
-import fbMobileApp from '../assets/fb-mobile-app.png'
+import facebookAppSize from '../assets/fb-app-size.jpg'
 
-<img src={fbMobileApp} style={{ width: '100%' }} />
-
----
-
-<!--
-
-Add more-recent screenshot
-
--->
+<img src={facebookAppSize} style={{ height: '100vh' }} />
 
 ---
+
+import mario64Src from '../assets/super-mario-64.jpg'
+
+<img src={mario64Src} style={{ width: '50%' }} />
 
 Mario 64 was 32 megabytes.
 
 ---
 
-# Context matters
+### 2. Input Feedback Performance
 
-People never like waiting, but the tolerances vary.
+Mobile apps are solid. Generally, web apps are pretty alright as well, at least on modern hardware in North America.
 
-
----
-
-# The Takeaway
-
-Initial load time
+**Winner: Draw**
 
 ---
 
-## One Reason: User Experience
+### 3. Animation Performance
 
-Mobile apps tend to feel better
+Even on powerful hardware, many web apps don't have 60fps animations (if they have any at all).
+
+Mobile apps tend to be butter-smooth and delightful.
+
+**Winner: 📱**
+
+---
+
+People put up with the high onboarding friction of mobile because the _user experience_ is better.
 
 ---
 
