@@ -22,11 +22,12 @@ import './index.css'
 
 export default LightSlide
 
-My name’s Josh.
+import doLogoSrc from '../assets/do-logo.png'
+import meSrc from '../assets/me.jpg'
 
-import digitalOceanLogoSrc from '../assets/digital-ocean-logo.jpg'
-
-<img src={digitalOceanLogoSrc} />
+<img src={meSrc} style={{ width: 200, height: 200, objectFit: 'cover', borderRadius: 100 }} />
+<span style={{ display: 'inline-block', width: 50 }} />
+<img src={doLogoSrc} style={{ width: 200, height: 200 }} />
 
 ---
 
@@ -130,7 +131,7 @@ What does this have to do with anything?
 
 ---
 
-### Things we don't think about so much:
+### Things we don't focus on as much:
 
 - Everything after the page is loaded and interactive
 
@@ -189,7 +190,7 @@ import acSearchResults from '../assets/ac-search-results.png'
 
 ---
 
-Clearly, Time To Interactive is important.
+Clearly, load time is important, especially in this situation.
 
 ---
 
@@ -404,12 +405,6 @@ import codesandboxNetlifySrc from '../assets/codesandbox-netlify.jpg'
 
 ---
 
-import webflowSrc from '../assets/webflow.mp4'
-
-<video autoPlay src={webflowSrc} style={{ width: '100%' }} />
-
----
-
 The web is _low-friction_ both for consumers and developers.
 
 The web is content-rich because of it.
@@ -526,10 +521,23 @@ export default props => (
   <CodeSlide
     {...props}
     lang="jsx"
-    code={require('raw-loader!./code/accordion.item.without-mounting.example')}
-    ranges={[{ loc: [50, 55] }, { loc: [55, 67] }, { loc: [67, 76] }]}
+    code={require('raw-loader!./code/accordion.item.css.example')}
+    ranges={[
+      { loc: [0], title: 'Accordion keyframes' },
+      { loc: [0, 9] },
+      { loc: [10, 19] },
+      { loc: [20, 26] },
+    ]}
   />
 )
+
+---
+
+### `will-change`?
+
+`will-change` is a way to let the browser know to optimize a transition.
+
+It can help a lot, but it's a tradeoff with memory ⚖️
 
 ---
 
@@ -542,14 +550,6 @@ export default props => (
 import khanMenu from '../assets/khan-menu.gif'
 
 <img src={khanMenu} />
-
----
-
-### `will-change`?
-
-`will-change` is a way to let the browser know to optimize a transition.
-
-It can help a lot, but it's a tradeoff with memory ⚖️
 
 ---
 
@@ -666,11 +666,7 @@ We can do all of the art calculations in a separate thread.
 
 ---
 
-This was a terrific improvement, but more can be done!
-
----
-
-# OffscreenCanvas
+# The trusty sidekick: <br />OffscreenCanvas
 
 OffscreenCanvas allows you to _paint to a canvas_ from _within a web worker_.
 
@@ -692,15 +688,15 @@ import offscreenCanvasSupportSrc from '../assets/offscreen-canvas-support.png'
 
 ---
 
-## People hate page-load lag
+## People hate pages that take forever to load
 
 ---
 
-## People hate input-feedback lag
+## People hate pages that don't respond swiftly to interactions
 
 ---
 
-## People hate animation lag
+## People hate choppy, stuttery animations
 
 ---
 
@@ -708,7 +704,7 @@ import offscreenCanvasSupportSrc from '../assets/offscreen-canvas-support.png'
 
 If you're building an Amazon competitor, it makes sense to prioritize page-load above all else.
 
-For other apps? Your mileage may vary.
+For other apps? It depends.
 
 ---
 
@@ -716,8 +712,14 @@ Test your product on low-powered devices, and see where the pain points are. Met
 
 ---
 
-Thank you!
+All **resources, links, and code samples** available on Twitter:
 
-All code samples available through Twitter:
+<img
+  src={meSrc}
+  style={{ width: 200, height: 200, objectFit: 'cover', borderRadius: 100 }}
+/>
 
+<br />
 <span style={{ fontSize: 72, color: '#6FA0FF' }}>{'@JoshWComeau'}</span>
+
+Thank you!

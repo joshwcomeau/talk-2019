@@ -18,7 +18,6 @@
   }
 }
 
-/* prettier-ignore */
 .accordion-body {
   animation:
     dropIn 375ms ease-out,
