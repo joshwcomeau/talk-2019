@@ -2,6 +2,16 @@
 
 Hi there!
 
+### Recording
+
+Coming soon!
+
+### Slides
+
+So, here's the thing. This talk is media-heavy, and it hasn't been optimized at all for production. Plz don't visit this URL on any sort of metered connection, and also plz don't judge for having such poorly-performing slides for a talk about performance.
+
+https://loving-khorana-77de08.netlify.com/
+
 ### Resources and Links
 
 The talk includes links to various external articles and resources. Your best best is to [scan the presentation](https://raw.githubusercontent.com/joshwcomeau/talk-2019/master/presentation/index.mdx) markdown file to find them, but I'll list some of the more prevalent ones here:
