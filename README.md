@@ -2,9 +2,15 @@
 
 Hi there!
 
+### Resources and Links
+
+The talk includes links to various external articles and resources. Your best best is to [scan the presentation](https://raw.githubusercontent.com/joshwcomeau/talk-2019/master/presentation/index.mdx) markdown file to find them, but I'll list some of the more prevalent ones here:
+
+-
+
 ### Code Snippets
 
-The code samples shown in the presentation can be found in [presentation/code](https://github.com/joshwcomeau/talk-2019/tree/master/presentation/code). They may or may not run. They're mostly meant to be examples, but if something caught your eye in them, have at it!
+The code samples shown in the presentation can be found in [presentation/code](https://github.com/joshwcomeau/talk-2019/tree/master/presentation/code). They may or may not actually run, they're just examples
 
 ### Accordion
 

@@ -22,6 +22,16 @@ import './index.css'
 
 My name’s Josh.
 
+---
+
+export default LightSlide
+
+import digitalOceanLogoSrc from '../assets/digital-ocean-logo.jpg'
+
+<img src={digitalOceanLogoSrc} />
+
+---
+
 I flew here from Canada.
 
 # 🛫
@@ -114,10 +124,10 @@ What does this have to do with anything?
 
 ### Things we optimize for performance:
 
-- Client-side routing
 - Server-side rendering
 - Code-splitting
 - Tree-shaking
+- asset optimization
 - Lazy-loading
 
 ---
@@ -140,7 +150,7 @@ export default LightSlide
 
 ---
 
-How did we get here?
+Some context...
 
 ---
 
@@ -225,15 +235,15 @@ Having noticeable feedback delay is worse!
 
 ---
 
+<ExternalLink href="https://www.hillelwayne.com/post/performance-matters">
+  hillelwayne.com/post/performance-matters
+</ExternalLink>
+
+---
+
 import pcrSrc from '../assets/patient-care-report.png'
 
 <img src={pcrSrc} style={{ width: '100%' }} />
-
-<Footnote
-  title={'"Performance Matters"'}
-  subtitle="Hillel Wayne"
-  href="https://www.hillelwayne.com/post/performance-matters"
-/>
 
 ---
 
@@ -251,31 +261,42 @@ The machine it runs on is low-powered, and every input comes with a 250ms delay.
 
 ---
 
-Nobody wants to use software with noticeable input lag.
+import inputDelaySrc from '../assets/input-delay.mp4'
 
----
-
-<ExternalLink href="https://www.hillelwayne.com/post/performance-matters">
-  hillelwayne.com/post/performance-matters
+<ExternalLink href="https://input-delay.glitch.me/">
+  <video autoPlay src={inputDelaySrc} style={{ height: '100%' }} />
 </ExternalLink>
 
+<Footnote
+  title="input-delay.glitch.me"
+  subtitle="Made by Monica Dinculescu"
+  href="https://input-delay.glitch.me/"
+/>
+
 ---
 
-# Fixing input lag
+export default LightSlide
 
-- Spot the problem with React DevTools
-- Avoid unnecessary renders with _React.memo()_
-- Move complex work off of the main thread.
-- Prioritize updates with React Fiber\*
+## Input lag sucks
+
+---
+
+# Shiny new solution
+
+React's concurrent mode \* lets you prioritize updates.
+
+Shout-out to Philipp Spies' [amazing blog post](https://philippspiess.com/scheduling-in-react/) on the subject.
 
 <br />
 <br />
 
-\* Still unstable I think?
+\* Currently a working but unstable API
 
 ---
 
-There are resources for this stuff 🎉
+# Also, updates
+
+You can use `React.memo()` or `shouldComponentUpdate` to control renders.
 
 ---
 
@@ -292,32 +313,7 @@ A janky animation breaks the illusion, and the dissonance is uncomfortable.
 
 ---
 
-Effectively, there are 3 categories of performance:
-
-1. Initial load performance
-2. Input feedback performance
-3. Animation performance
-
----
-
-# Native Mobile vs. Web
-
----
-
-### 1. Initial Load Performance
-
-Web apps take a couple seconds to load, and can be accessed instantly.
-
-<div
-  style={{ color: 'white', fontSize: 22, fontFamily: "'Merriweather',serif" }}
->
-  Mobile apps require navigating the App Store, finding the app, checking your
-  password manager to figure out what your iCloud password is, downloading an
-  enormous file, installing it, deal with permissions, swipe through your home
-  screens to find the app, and open it.
-</div>
-
-**Winner: 🕸️**
+# Standards are higher than ever
 
 ---
 
@@ -546,7 +542,7 @@ import khanMenu from '../assets/khan-menu.gif'
 import Tweet from '../src/components/Tweet/Tweet.managed'
 
 <SpacedRow>
-  <Tweet tweetContents="Hello React Europe! 👋🏻" />
+  <Tweet tweetContents="Hello React Rally! 👋🏻" />
 </SpacedRow>
 
 ---
