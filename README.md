@@ -6,7 +6,17 @@ Hi there!
 
 The talk includes links to various external articles and resources. Your best best is to [scan the presentation](https://raw.githubusercontent.com/joshwcomeau/talk-2019/master/presentation/index.mdx) markdown file to find them, but I'll list some of the more prevalent ones here:
 
--
+- Monica Dinculescu's [Input Delay](https://input-delay.glitch.me) tool
+- ["Performance Matters"](https://www.hillelwayne.com/post/performance-matters) by Hillel Wayne
+- ["React.memo() for Functional Components", from scotch.io](https://scotch.io/tutorials/react-166-reactmemo-for-functional-components-rendering-control)
+- [Official React.memo docs](https://reactjs.org/docs/react-api.html#reactmemo)
+- ["Scheduling in React"](https://philippspiess.com/scheduling-in-react/) by Philipp Spiess
+- [React Podcast #35 with Matt Perry](https://reactpodcast.simplecast.fm/35)
+- ["Rendering Performance"](https://developers.google.com/web/fundamentals/performance/rendering/) by Paul Lewis
+- [CSSTriggers](https://csstriggers.com)
+- Vincent Riemer's [perf test](https://codepen.io/joshwcomeau/pen/yrPzWO)
+- Tools for creating sprites: [GIPHY Capture](https://giphy.com/apps/giphycapture) and [EZGif](https://ezgif.com/gif-to-sprite)
+- ["When should you be using Web Workers?"](https://dassur.ma/things/when-workers/) by Surma
 
 ### Code Snippets
 

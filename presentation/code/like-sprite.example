@@ -12,8 +12,12 @@ const LikeSprite = () => {
 }
 
 const backgroundAnimation = keyframes`
+  from {
+    transform: translateX(0);
+  }
+
   to {
-    transform: translateX(-2448px);
+    transform: translateX(-100%);
   }
 `
 

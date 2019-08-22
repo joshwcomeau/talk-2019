@@ -20,11 +20,9 @@ import './index.css'
 
 ---
 
-My name’s Josh.
-
----
-
 export default LightSlide
+
+My name’s Josh.
 
 import digitalOceanLogoSrc from '../assets/digital-ocean-logo.jpg'
 
@@ -127,14 +125,14 @@ What does this have to do with anything?
 - Server-side rendering
 - Code-splitting
 - Tree-shaking
-- asset optimization
+- Asset optimization
 - Lazy-loading
 
 ---
 
 ### Things we don't think about so much:
 
-- Everything after the page loads
+- Everything after the page is loaded and interactive
 
 ---
 
@@ -191,23 +189,34 @@ import acSearchResults from '../assets/ac-search-results.png'
 
 ---
 
+Clearly, Time To Interactive is important.
+
+---
+
 ### Humans are impatient
 
 ---
 
-### Pop Quiz
-
-Do you think we become <em>more</em> or <em>less</em> patient after the initial page load?
+We remain impatient after the page is loaded and interactive.
 
 ---
 
 <FlexRow>
   <BigNumber
-    num="100ms"
+    prefix="Interaction"
+    num="50-100ms"
     description="time to transition UI when clicking or tapping"
   />
-  <BigNumber num="16ms" description="time for each frame in an animation" />
+  <BigNumber
+    prefix="animation"
+    num="16.67ms"
+    description="time for each frame in an animation"
+  />
 </FlexRow>
+
+---
+
+# Interactions
 
 ---
 
@@ -222,12 +231,6 @@ import inputDelaySrc from '../assets/input-delay.mp4'
   subtitle="Made by Monica Dinculescu"
   href="https://input-delay.glitch.me/"
 />
-
----
-
-Staring at a white screen is bad.
-
-Having noticeable feedback delay is worse!
 
 ---
 
@@ -267,23 +270,39 @@ import inputDelaySrc from '../assets/input-delay.mp4'
   <video autoPlay src={inputDelaySrc} style={{ height: '100%' }} />
 </ExternalLink>
 
-<Footnote
-  title="input-delay.glitch.me"
-  subtitle="Made by Monica Dinculescu"
-  href="https://input-delay.glitch.me/"
-/>
-
 ---
 
 export default LightSlide
 
-## Input lag sucks
+People avoid websites/apps with input latency.
+
+It can be hard to measure, in aggregate.
 
 ---
 
-# Shiny new solution
+# Input latency tools
 
-React's concurrent mode \* lets you prioritize updates.
+In React, the most common cause for input latency is wasteful renders.
+
+- `React.memo()`
+- `shouldComponentUpdate`
+
+---
+
+# Resources
+
+- ["React.memo() for Functional Components", from scotch.io](https://scotch.io/tutorials/react-166-reactmemo-for-functional-components-rendering-control)
+- [Official docs](https://reactjs.org/docs/react-api.html#reactmemo)
+
+---
+
+Profiling is your friend.
+
+---
+
+# Scheduling
+
+React's concurrent mode lets you prioritize updates\*.
 
 Shout-out to Philipp Spies' [amazing blog post](https://philippspiess.com/scheduling-in-react/) on the subject.
 
@@ -294,26 +313,23 @@ Shout-out to Philipp Spies' [amazing blog post](https://philippspiess.com/schedu
 
 ---
 
-# Also, updates
-
-You can use `React.memo()` or `shouldComponentUpdate` to control renders.
-
----
-
 # What about animations?
 
 ---
 
-When applied tastefully, animations provide important visual context and
-feedback. Animations can make your UI feel tangible.
+Is this as important?
 
 ---
 
-A janky animation breaks the illusion, and the dissonance is uncomfortable.
+Animations serve many purposes, but a big one is making your app feel tangible / "real".
 
 ---
 
 # Standards are higher than ever
+
+---
+
+# 📱 vs 🕸️
 
 ---
 
@@ -339,25 +355,20 @@ Mario 64 was 32 megabytes.
 
 ---
 
-### 2. Input Feedback Performance
+### Think about how much friction app installs are...
 
-Mobile apps are solid. Generally, web apps are pretty alright as well, at least on modern hardware in North America.
-
-**Winner: Draw**
-
----
-
-### 3. Animation Performance
-
-Even on powerful hardware, many web apps don't have 60fps animations (if they have any at all).
-
-Mobile apps tend to be butter-smooth and delightful.
-
-**Winner: 📱**
+- Find the app in the App Store
+- Try and remember your App Store password
+- Download hundreds of megabytes
+- Wait for it to install
+- Figure out where the app icon went
+- Wait for it to open
 
 ---
 
-People put up with the high onboarding friction of mobile because the _user experience_ is better.
+### Why does anyone use mobile apps?
+
+Many reasons, but I think a big one is that they feel nice to use. The _user experience_ is better.
 
 ---
 
@@ -405,7 +416,9 @@ The web is content-rich because of it.
 
 ---
 
-In order to keep the web relevant, we need to create native-mobile-quality experiences.
+In order to keep the web relevant, we need to match the UX of native apps.
+
+This is where animation performance comes in.
 
 ---
 
@@ -448,21 +461,19 @@ export default LightSlide
 
 <img src={pixelPipelineSrc} style={{ width: '100%' }} />
 
-<br /><br /><br />
-
-<div style={{ fontSize: 15 }}>
-  Courtesy of{' '}
-  <a href="https://developers.google.com/web/fundamentals/performance/rendering/">
-    Google Web Fundamentals docs
-  </a>
-  .
-</div>
+<Footnote
+  title="Rendering Performance"
+  subtitle="By Paul Lewis"
+  href="https://developers.google.com/web/fundamentals/performance/rendering/"
+/>
 
 ---
 
 Properties like `background-color` don't trigger layout.
 
 ---
+
+export default LightSlide
 
 import cssTriggersSrc from '../assets/csstriggers.png'
 
@@ -499,9 +510,8 @@ export default props => (
     code={require('raw-loader!./code/accordion.item.with-mounting.example')}
     ranges={[
       { loc: [0], title: 'Accordion Item' },
+      { loc: [0], title: '⚡️️️️️⚡️️️️️⚡️️️️️⚡️️️️️' },
       { loc: [8, 9] },
-      { loc: [9, 13] },
-      { loc: [21, 27] },
       { loc: [31, 38] },
       { loc: [47, 48] },
       { loc: [38, 46] },
@@ -517,7 +527,7 @@ export default props => (
     {...props}
     lang="jsx"
     code={require('raw-loader!./code/accordion.item.without-mounting.example')}
-    ranges={[{ loc: [50, 67] }, { loc: [55, 67] }, { loc: [67, 76] }]}
+    ranges={[{ loc: [50, 55] }, { loc: [55, 67] }, { loc: [67, 76] }]}
   />
 )
 
@@ -532,6 +542,14 @@ export default props => (
 import khanMenu from '../assets/khan-menu.gif'
 
 <img src={khanMenu} />
+
+---
+
+### `will-change`?
+
+`will-change` is a way to let the browser know to optimize a transition.
+
+It can help a lot, but it's a tradeoff with memory ⚖️
 
 ---
 
@@ -553,58 +571,13 @@ import LikeButton from '../src/components/LikeButton/LikeButton.managed'
 
 ---
 
-export default props => (
-  <CodeSlide
-    {...props}
-    lang="js"
-    code={require('raw-loader!./code/particle-api.example')}
-    ranges={[
-      { loc: [0], title: 'Particle usage' },
-      { loc: [0, 4] },
-      { loc: [4, 5] },
-    ]}
-  />
-)
-
----
-
-# Trigonometry!
-
-[jspaint.app](https://jspaint.app)
-
-<!-- soh-cah-toa, figuring out angle and distance -->
-
----
-
-export default props => (
-  <CodeSlide
-    {...props}
-    lang="jsx"
-    code={require('raw-loader!./code/particle.example')}
-    ranges={[
-      { loc: [0], title: 'Particle.js' },
-      { loc: [2, 7] },
-      { loc: [7, 9] },
-      { loc: [10, 14] },
-      { loc: [15, 21] },
-      { loc: [22, 27] },
-    ]}
-  />
-)
-
----
-
-...wait this is a performance talk
-
----
-
 import likeBeforeSrc from '../assets/like-before.png'
 
 <img src={likeBeforeSrc} style={{ width: '100%' }} />
 
 ---
 
-## Also, this animation runs on the main thread.
+## It runs on the main thread.
 
 [Perf test](https://codepen.io/joshwcomeau/pen/yrPzWO)
 
@@ -642,18 +615,20 @@ export default props => (
     ranges={[
       { loc: [0], title: 'LikeSprite.js' },
       { loc: [5, 12] },
-      { loc: [13, 18] },
-      { loc: [19, 24] },
-      { loc: [25, 33] },
+      { loc: [13, 22] },
+      { loc: [23, 28] },
+      { loc: [29, 37] },
     ]}
   />
 )
 
 ---
 
-# The performance
+export default LightSlide
 
-Near-free. Takes a few microseconds per tick.
+import spritePerfSrc from '../assets/sprite-perf.png'
+
+<img src={spritePerfSrc} style={{ width: '100%' }} />
 
 ---
 
@@ -673,23 +648,25 @@ Near-free. Takes a few microseconds per tick.
 
 [Tinkersynth](https://tinkersynth.com)
 
-<!--
+---
 
-show off the product.
+import tinkersynthYikesSrc from '../assets/tinkersynth-yikes.mp4'
 
-Talk about the expensiveness of calculating every line
-
-Mention trigonometry, when showing the polar control
-
--->
+<video autoPlay loop src={tinkersynthYikesSrc} style={{ height: '75vh' }} />
 
 ---
 
-# Web Workers
+# The forgotten hero: <br />Web Workers
 
-We can do all of the art calculations in a worker.
+We can do all of the art calculations in a separate thread.
 
-Workers don't have access to the DOM, though, so painting to canvas is still really slow.
+---
+
+<p><ExternalLink href="https://dassur.ma/things/when-workers/">"When should you be using Web Workers?"</ExternalLink>, by Surma</p>
+
+---
+
+This was a terrific improvement, but more can be done!
 
 ---
 
@@ -699,9 +676,15 @@ OffscreenCanvas allows you to _paint to a canvas_ from _within a web worker_.
 
 ---
 
-import tinkersynthYikesSrc from '../assets/tinkersynth-yikes.mp4'
+import offscreenCanvasSupportSrc from '../assets/offscreen-canvas-support.png'
 
-<video autoPlay loop src={tinkersynthYikesSrc} style={{ width: '100%' }} />
+:(
+
+<img src={offscreenCanvasSupportSrc} style={{ width: '100%' }} />
+
+---
+
+⏰
 
 ---
 
@@ -709,21 +692,27 @@ import tinkersynthYikesSrc from '../assets/tinkersynth-yikes.mp4'
 
 ---
 
-## People hate waiting seconds for a page to load
+## People hate page-load lag
 
 ---
 
-## People hate waiting tenths of seconds for feedback for their actions
+## People hate input-feedback lag
 
 ---
 
-## People hate waiting hundredths of seconds for each frame in an animation
+## People hate animation lag
 
 ---
 
-The problems are similar, but the solutions are very different.
+# Context matters
 
-It's worth learning the "full stack" of front-end web performance.
+If you're building an Amazon competitor, it makes sense to prioritize page-load above all else.
+
+For other apps? Your mileage may vary.
+
+---
+
+Test your product on low-powered devices, and see where the pain points are. Metrics aren't collected evenly.
 
 ---
 
