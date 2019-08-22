@@ -1,0 +1,10 @@
+@keyframes spriteAnimation {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.like-sprite {
+  height: 100%;
+  animation: spriteAnimation 1616.66ms steps(97) both infinite;
+}

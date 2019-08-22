@@ -9,7 +9,6 @@ import Spacer from '../Spacer'
 import Action from './Action'
 import Stat from './Stat'
 import TweetActionIcon from './TweetActionIcon'
-import UnstyledButton from '../UnstyledButton'
 
 const propTypes = {
   displayName: PropTypes.string.isRequired,
@@ -24,6 +23,69 @@ const propTypes = {
   handleToggleLike: PropTypes.func.isRequired,
   handleToggleRetweet: PropTypes.func.isRequired,
 }
+
+const Wrapper = styled.div`
+  background: white;
+  width: 580px;
+  padding: 16px;
+  text-align: left;
+  /* padding-bottom: 0; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Ubuntu, 'Helvetica Neue', sans-serif;
+`
+
+const Header = styled.header`
+  display: flex;
+`
+
+const Name = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 16px;
+`
+
+const DisplayName = styled.div`
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: bold;
+`
+
+const Username = styled.div`
+  font-size: 15px;
+  line-height: 20px;
+  color: rgb(101, 119, 134);
+`
+
+const TweetContents = styled.div`
+  font-size: 22px;
+  padding: 16px 0;
+`
+
+const Timestamp = styled.div`
+  color: rgb(101, 119, 134);
+  font-size: 16px;
+  padding-bottom: 16px;
+`
+
+const Divider = styled.div`
+  height: 1px;
+  background: rgb(230, 236, 240);
+`
+
+const Stats = styled.div`
+  display: flex;
+  align-items: center;
+  height: 48px;
+`
+
+const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 48px;
+`
 
 const Tweet = ({
   displayName,
@@ -106,69 +168,6 @@ const Tweet = ({
     </Wrapper>
   )
 }
-
-const Wrapper = styled.div`
-  background: white;
-  width: 580px;
-  padding: 16px;
-  text-align: left;
-  /* padding-bottom: 0; */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Ubuntu, 'Helvetica Neue', sans-serif;
-`
-
-const Header = styled.header`
-  display: flex;
-`
-
-const Name = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0px 16px;
-`
-
-const DisplayName = styled.div`
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: bold;
-`
-
-const Username = styled.div`
-  font-size: 15px;
-  line-height: 20px;
-  color: rgb(101, 119, 134);
-`
-
-const TweetContents = styled.div`
-  font-size: 22px;
-  padding: 16px 0;
-`
-
-const Timestamp = styled.div`
-  color: rgb(101, 119, 134);
-  font-size: 16px;
-  padding-bottom: 16px;
-`
-
-const Divider = styled.div`
-  height: 1px;
-  background: rgb(230, 236, 240);
-`
-
-const Stats = styled.div`
-  display: flex;
-  align-items: center;
-  height: 48px;
-`
-
-const Actions = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 48px;
-`
 
 Tweet.propTypes = propTypes
 

@@ -3,27 +3,15 @@ import styled, { keyframes } from 'styled-components'
 
 import likeSpriteSrc from '../../../assets/like-sprite-60.png'
 
+// NOTE: I ran into some issues building styled-component images in MDX.
+// Rather than debug the issue, I'm lazy and just moved the
+// relevant elements to CSS.
+import './LikeSprite.css'
+
 const SCALE_RATIO = 2
 
 const IMAGE_HEIGHT = 120 / SCALE_RATIO
 const FRAME_SIZE = IMAGE_HEIGHT
-const NUM_OF_FRAMES = 97
-const SPEED = 60 // frames per second
-const ANIMATION_DURATION = (NUM_OF_FRAMES / SPEED) * 1000
-
-const LikeSprite = () => {
-  return (
-    <Wrapper>
-      <Img src={likeSpriteSrc} />
-    </Wrapper>
-  )
-}
-
-const backgroundAnimation = keyframes`
-  to {
-    transform: translateX(-100%);
-  }
-`
 
 const Wrapper = styled.div`
   width: ${FRAME_SIZE}px;
@@ -33,17 +21,12 @@ const Wrapper = styled.div`
   margin: auto;
 `
 
-// prettier-ignore
-const Img = styled.img`
-  height: 100%;
-  animation:
-    ${backgroundAnimation}
-    ${ANIMATION_DURATION}ms
-    steps(${NUM_OF_FRAMES})
-    both
-    infinite;
-
-  will-change: transform;
-`;
+const LikeSprite = () => {
+  return (
+    <Wrapper>
+      <img className="like-sprite" src={likeSpriteSrc} />
+    </Wrapper>
+  )
+}
 
 export default LikeSprite

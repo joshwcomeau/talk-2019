@@ -10,7 +10,7 @@ import Spacer from '../Spacer'
 import AccordionContext from './Accordion.context'
 
 const AccordionItem = ({ title, children }) => {
-  const [itemId] = React.useState(() => console.log('uuu') || uuid())
+  const [itemId] = React.useState(() => uuid())
 
   const titleId = `${itemId}-title`
   const contentId = `${itemId}-content`
