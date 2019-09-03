@@ -4,7 +4,7 @@ Hi there!
 
 ### Recording
 
-Coming soon!
+https://www.youtube.com/watch?v=DNGGzwmfouU
 
 ### Slides
 
