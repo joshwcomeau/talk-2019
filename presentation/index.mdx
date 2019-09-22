@@ -22,98 +22,38 @@ import './index.css'
 
 export default LightSlide
 
-import doLogoSrc from '../assets/do-logo.png'
 import meSrc from '../assets/me.jpg'
 
-<img src={meSrc} style={{ width: 200, height: 200, objectFit: 'cover', borderRadius: 100 }} />
-<span style={{ display: 'inline-block', width: 50 }} />
-<img src={doLogoSrc} style={{ width: 200, height: 200 }} />
+#### This is what I look like on the internet ↴
+
+<br /><br />
+
+<img
+  src={meSrc}
+  style={{ width: 200, height: 200, objectFit: 'cover', borderRadius: 100 }}
+/>
 
 ---
-
-I flew here from Canada.
-
-# 🛫
-
----
-
-Raise your hand if you flew here as well
-
-✋
-
----
-
-Keep your hand raised if you enjoyed your flight
-
----
-
-Flying is **amazing**
-
----
-
-import flying1 from '../assets/flying-1.jpg'
-
-<img src={flying1} style={{ width: '100%' }} />
-
----
-
-import flying2 from '../assets/flying-2.jpg'
-
-<img src={flying2} style={{ width: '100%' }} />
-
----
-
-import flying3 from '../assets/flying-3.jpg'
-
-<img src={flying3} style={{ width: '100%' }} />
-
----
-
-...but it doesn't always feel amazing.
-
----
-
-Let's talk about
-
-### Boarding
-
----
-
-import boardRankedSrc from '../assets/plane-boarding-methods-ranked.png'
-
-<img src={boardRankedSrc} style={{ width: '100%' }} />
-
----
-
-import boardStupidSrc from '../assets/plane-boarding-stupid.png'
-
-<img src={boardStupidSrc} style={{ width: '100%' }} />
-
----
-
-import boardBusinessSrc from '../assets/board-business.png'
-
-<img src={boardBusinessSrc} style={{ width: '100%' }} />
 
 export default LightSlide
 
----
-
-import mythbustersSrc from '../assets/mythbusters.mp4'
-
-<video autoPlay src={mythbustersSrc} style={{ width: '100%' }} />
+I like cats, but I'm allergic
 
 ---
 
-Boarding is indeed important...
+export default LightSlide
+
+### @joshwcomeau
+
+<br /><br />
+
+### Send me your cats
 
 ---
 
-...But is boarding _really_ the biggest problem with air travel?
+export default LightSlide
 
----
-
-What does this have to do with anything?
+<span style={{ fontSize: 200 }}>🛴 💥</span>
 
 ---
 
@@ -123,7 +63,7 @@ What does this have to do with anything?
 
 ### Things we optimize for performance:
 
-- Server-side rendering
+- Server-side rendering (or compile-time rendering)
 - Code-splitting
 - Tree-shaking
 - Asset optimization
@@ -134,14 +74,6 @@ What does this have to do with anything?
 ### Things we don't focus on as much:
 
 - Everything after the page is loaded and interactive
-
----
-
-import pieSrc from '../assets/pie-opaque.png'
-
-export default LightSlide
-
-<img src={pieSrc} style={{ width: '100%' }} />
 
 ---
 
@@ -190,15 +122,11 @@ import acSearchResults from '../assets/ac-search-results.png'
 
 ---
 
-Clearly, load time is important, especially in this situation.
+### People are not patient
 
 ---
 
-### Humans are impatient
-
----
-
-We remain impatient after the page is loaded and interactive.
+We **remain impatient** after the page is loaded and interactive.
 
 ---
 
@@ -265,22 +193,6 @@ The machine it runs on is low-powered, and every input comes with a 250ms delay.
 
 ---
 
-import inputDelaySrc from '../assets/input-delay.mp4'
-
-<ExternalLink href="https://input-delay.glitch.me/">
-  <video autoPlay src={inputDelaySrc} style={{ height: '100%' }} />
-</ExternalLink>
-
----
-
-export default LightSlide
-
-People avoid websites/apps with input latency.
-
-It can be hard to measure, in aggregate.
-
----
-
 # Input latency tools
 
 In React, the most common cause for input latency is wasteful renders.
@@ -298,19 +210,6 @@ In React, the most common cause for input latency is wasteful renders.
 ---
 
 Profiling is your friend.
-
----
-
-# Scheduling
-
-React's concurrent mode lets you prioritize updates\*.
-
-Shout-out to Philipp Spies' [amazing blog post](https://philippspiess.com/scheduling-in-react/) on the subject.
-
-<br />
-<br />
-
-\* Currently a working but unstable API
 
 ---
 
@@ -369,7 +268,13 @@ Mario 64 was 32 megabytes.
 
 ### Why does anyone use mobile apps?
 
-Many reasons, but I think a big one is that they feel nice to use. The _user experience_ is better.
+---
+
+Many reasons, but I think a big one is that they're nice to use.
+
+---
+
+# "User Experience"
 
 ---
 
@@ -391,7 +296,9 @@ import chantasticSrc from '../assets/chantastic.jpg'
 
 # Relevance
 
-<!-- Matt Perry's ideas about the web as a uniquely open platform -->
+---
+
+AOL -> web
 
 ---
 
@@ -492,7 +399,7 @@ We can't build _exactly_ that animation, but we can build something close.
 
 ---
 
-import AccordionExample from '../src/components/Accordion/Accordion.example'
+import AccordionExample from '../src/components/Accordion/Accordion.example.js'
 
 <AccordionExample />
 
@@ -560,7 +467,7 @@ import khanMenu from '../assets/khan-menu.gif'
 import Tweet from '../src/components/Tweet/Tweet.managed'
 
 <SpacedRow>
-  <Tweet tweetContents="Hello React Rally! 👋🏻" />
+  <Tweet tweetContents="Hello React Boston! 👋🏻" />
 </SpacedRow>
 
 ---
@@ -629,6 +536,12 @@ export default LightSlide
 import spritePerfSrc from '../assets/sprite-perf.png'
 
 <img src={spritePerfSrc} style={{ width: '100%' }} />
+
+---
+
+# Fun fact
+
+This is actually how Twitter does it!
 
 ---
 
@@ -708,18 +621,19 @@ For other apps? It depends.
 
 ---
 
-Test your product on low-powered devices, and see where the pain points are. Metrics aren't collected evenly.
+Test your product on low-powered devices, and see where the pain points are.
+
+---
+
+Start analyzing the products you use every day.
 
 ---
 
 All **resources, links, and code samples** available on Twitter:
 
-<img
-  src={meSrc}
-  style={{ width: 200, height: 200, objectFit: 'cover', borderRadius: 100 }}
-/>
-
 <br />
 <span style={{ fontSize: 72, color: '#6FA0FF' }}>{'@JoshWComeau'}</span>
 
-Thank you!
+(Don't forget: cats!)
+
+##### Thank you!
